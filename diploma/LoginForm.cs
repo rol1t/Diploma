@@ -10,14 +10,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+using diploma.Models;
 
 namespace diploma
 {
     public partial class LoginForm : MaterialForm, ILoginView
     {
-        public LoginForm()
+        public IServiceProvider ServiceProvider { get; }
+
+        public LoginForm(IServiceProvider sp)
         {
             InitializeComponent();
+            ServiceProvider = sp;
         }
 
         public string Login 
@@ -44,7 +49,7 @@ namespace diploma
             set => lbError.Text = value; 
         }
 
-        Form ILoginView.LoginForm { get => this; }
+        LoginForm ILoginView.LoginForm { get => this; }
 
         private async void loginButton_Click(object sender, EventArgs e)
         {

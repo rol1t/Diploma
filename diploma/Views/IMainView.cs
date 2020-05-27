@@ -11,6 +11,6 @@ namespace diploma.Views
     public interface IMainView
     {
         User User { get; }
-        Form MainForm { get; }
+        MainForm MainForm { get; }
     }
 }

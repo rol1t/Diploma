@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace diploma
 {
@@ -16,7 +17,16 @@ namespace diploma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            var services = new ServiceCollection();
+
+            Startup.ConfigureServices(services);
+
+            using (ServiceProvider serviceProvider = services.BuildServiceProvider())
+            {
+                var form1 = serviceProvider.GetRequiredService<LoginForm>();
+                Application.Run(form1);
+            }
         }
     }
 }

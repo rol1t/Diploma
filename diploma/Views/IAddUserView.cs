@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace diploma.Views
 {
-    public interface ILoginView
+    public interface IAddUserView
     {
         string Login { get; set; }
 
+        string UserName { get; set; }
+
         string Password { get; set; }
 
-        bool RememberMe { get; set; }
+        string PasswordConfirmation { get; set; }
 
-        string ErrorMessage { get; set; }
+        bool IsTeacher { get; set; }
 
-        LoginForm LoginForm { get; }
+        string Message { get; set; }
     }
 }

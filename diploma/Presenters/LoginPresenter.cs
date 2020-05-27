@@ -30,7 +30,7 @@ namespace diploma.Presenters
                 else
                 {
                     View.LoginForm.Hide();
-                    var mainForm = new MainForm(result);
+                    var mainForm = new MainForm(result, View.LoginForm.ServiceProvider);
                     mainForm.Show();
                 }
             }
