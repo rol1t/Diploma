@@ -20,7 +20,6 @@ namespace diploma.UI
         public AddUserPage()
         {
             InitializeComponent();
-            MaterialForm
             _presenter = new AddUserPresenter(this);
         }
 
