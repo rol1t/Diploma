@@ -73,7 +73,7 @@
             this.btAddTheme.DrawShadows = true;
             this.btAddTheme.HighEmphasis = true;
             this.btAddTheme.Icon = null;
-            this.btAddTheme.Location = new System.Drawing.Point(668, 14);
+            this.btAddTheme.Location = new System.Drawing.Point(851, 17);
             this.btAddTheme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btAddTheme.MouseState = MaterialSkin.MouseState.HOVER;
             this.btAddTheme.Name = "btAddTheme";
@@ -100,7 +100,7 @@
             this.txtMessage.ForeColor = System.Drawing.Color.Red;
             this.txtMessage.Location = new System.Drawing.Point(440, 14);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(221, 53);
+            this.txtMessage.Size = new System.Drawing.Size(404, 53);
             this.txtMessage.TabIndex = 10;
             // 
             // txtContent1
@@ -111,8 +111,8 @@
             this.txtContent1.AllowHyphenation = true;
             this.txtContent1.AllowPictures = true;
             this.txtContent1.AllowSpellCheck = false;
-            this.txtContent1.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.txtContent1.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtContent1.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.txtContent1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtContent1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtContent1.FilePath = "";
             this.txtContent1.Location = new System.Drawing.Point(5, 70);
@@ -122,7 +122,7 @@
     "5\\\'ea\\\'f1\\\'f2\\par\r\n}\r\n";
             this.txtContent1.SetColorWithFont = true;
             this.txtContent1.ShowToolStrip = true;
-            this.txtContent1.Size = new System.Drawing.Size(767, 474);
+            this.txtContent1.Size = new System.Drawing.Size(950, 474);
             this.txtContent1.TabIndex = 11;
             // 
             // AddThemeControl
@@ -136,7 +136,7 @@
             this.Controls.Add(this.txtThemeName);
             this.Name = "AddThemeControl";
             this.Padding = new System.Windows.Forms.Padding(5, 70, 5, 5);
-            this.Size = new System.Drawing.Size(777, 549);
+            this.Size = new System.Drawing.Size(960, 549);
             this.ResumeLayout(false);
             this.PerformLayout();
 

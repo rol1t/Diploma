@@ -33,13 +33,13 @@
             this.msTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.addTestPage = new System.Windows.Forms.TabPage();
             this.addUserPage = new System.Windows.Forms.TabPage();
-            this.addUserPage1 = new diploma.UI.AddUserPage();
             this.testsPage = new System.Windows.Forms.TabPage();
             this.themesPage = new System.Windows.Forms.TabPage();
             this.profilePage = new System.Windows.Forms.TabPage();
-            this.profilePage1 = new diploma.UI.ProfilePage();
             this.menuIconList = new System.Windows.Forms.ImageList(this.components);
             this.mcAddTheme = new System.Windows.Forms.TabPage();
+            this.addUserPage1 = new diploma.UI.AddUserPage();
+            this.profilePage1 = new diploma.UI.ProfilePage();
             this.addThemeControl1 = new diploma.UI.AddThemeControl();
             this.msTabControl.SuspendLayout();
             this.addUserPage.SuspendLayout();
@@ -89,22 +89,6 @@
             this.addUserPage.Text = "Пользователи";
             this.addUserPage.UseVisualStyleBackColor = true;
             // 
-            // addUserPage1
-            // 
-            this.addUserPage1.BackColor = System.Drawing.Color.White;
-            this.addUserPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addUserPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addUserPage1.IsTeacher = false;
-            this.addUserPage1.Location = new System.Drawing.Point(3, 3);
-            this.addUserPage1.Login = "";
-            this.addUserPage1.Message = "";
-            this.addUserPage1.Name = "addUserPage1";
-            this.addUserPage1.Password = "";
-            this.addUserPage1.PasswordConfirmation = "";
-            this.addUserPage1.Size = new System.Drawing.Size(1009, 514);
-            this.addUserPage1.TabIndex = 0;
-            this.addUserPage1.UserName = "";
-            // 
             // testsPage
             // 
             this.testsPage.ImageKey = "baseline_done_outline_white_24dp.png";
@@ -139,16 +123,6 @@
             this.profilePage.Text = "Профиль";
             this.profilePage.UseVisualStyleBackColor = true;
             // 
-            // profilePage1
-            // 
-            this.profilePage1.BackColor = System.Drawing.Color.White;
-            this.profilePage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.profilePage1.ForeColor = System.Drawing.Color.Black;
-            this.profilePage1.Location = new System.Drawing.Point(3, 3);
-            this.profilePage1.Name = "profilePage1";
-            this.profilePage1.Size = new System.Drawing.Size(1009, 514);
-            this.profilePage1.TabIndex = 0;
-            // 
             // menuIconList
             // 
             this.menuIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("menuIconList.ImageStream")));
@@ -164,6 +138,7 @@
             // mcAddTheme
             // 
             this.mcAddTheme.Controls.Add(this.addThemeControl1);
+            this.mcAddTheme.ImageKey = "outline_book_white_24dp.png";
             this.mcAddTheme.Location = new System.Drawing.Point(4, 31);
             this.mcAddTheme.Name = "mcAddTheme";
             this.mcAddTheme.Padding = new System.Windows.Forms.Padding(3);
@@ -171,6 +146,32 @@
             this.mcAddTheme.TabIndex = 5;
             this.mcAddTheme.Text = "Добавить тему";
             this.mcAddTheme.UseVisualStyleBackColor = true;
+            // 
+            // addUserPage1
+            // 
+            this.addUserPage1.BackColor = System.Drawing.Color.White;
+            this.addUserPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addUserPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addUserPage1.IsTeacher = false;
+            this.addUserPage1.Location = new System.Drawing.Point(3, 3);
+            this.addUserPage1.Login = "";
+            this.addUserPage1.Message = "";
+            this.addUserPage1.Name = "addUserPage1";
+            this.addUserPage1.Password = "";
+            this.addUserPage1.PasswordConfirmation = "";
+            this.addUserPage1.Size = new System.Drawing.Size(1009, 514);
+            this.addUserPage1.TabIndex = 0;
+            this.addUserPage1.UserName = "";
+            // 
+            // profilePage1
+            // 
+            this.profilePage1.BackColor = System.Drawing.Color.White;
+            this.profilePage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profilePage1.ForeColor = System.Drawing.Color.Black;
+            this.profilePage1.Location = new System.Drawing.Point(3, 3);
+            this.profilePage1.Name = "profilePage1";
+            this.profilePage1.Size = new System.Drawing.Size(1009, 514);
+            this.profilePage1.TabIndex = 0;
             // 
             // addThemeControl1
             // 
