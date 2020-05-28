@@ -99,8 +99,17 @@
     <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
+    <Reference Include="NetSpell.SpellChecker, Version=2.1.7.41329, Culture=neutral, PublicKeyToken=318b389f0db66e46">
+      <HintPath>..\packages\NetSpell.2.1.7\lib\NetSpell.SpellChecker.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PrintRichTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RichTextBoxEx.1.0.0\lib\PrintRichTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="RichTextBoxEx, Version=1.0.6541.36291, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RichTextBoxEx.1.0.0\lib\RichTextBoxEx.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -163,6 +172,10 @@
     <Compile Include="Migrations\20200526221114_init.designer.cs">
       <DependentUpon>20200526221114_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200528194205_Add_ThemeTable.cs" />
+    <Compile Include="Migrations\20200528194205_Add_ThemeTable.designer.cs">
+      <DependentUpon>20200528194205_Add_ThemeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Question.cs" />
@@ -172,6 +185,7 @@
     <Compile Include="Models\Theme.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Variant.cs" />
+    <Compile Include="Presenters\AddThemePresenter.cs" />
     <Compile Include="Presenters\AddUserPresenter.cs" />
     <Compile Include="Presenters\GenericPresenter.cs" />
     <Compile Include="Presenters\LoginPresenter.cs" />
@@ -181,11 +195,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RememberMeManager.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="UI\AddThemePage.cs">
+    <Compile Include="UI\AddThemeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\AddThemePage.Designer.cs">
-      <DependentUpon>AddThemePage.cs</DependentUpon>
+    <Compile Include="UI\AddThemeControl.Designer.cs">
+      <DependentUpon>AddThemeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\AddUserPage.cs">
       <SubType>UserControl</SubType>
@@ -205,6 +219,7 @@
     <Compile Include="UI\TestConstructorPage.Designer.cs">
       <DependentUpon>TestConstructorPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\IAddThemeView.cs" />
     <Compile Include="Views\IAddUserView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\IMainView.cs" />
@@ -225,8 +240,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\AddThemePage.resx">
-      <DependentUpon>AddThemePage.cs</DependentUpon>
+    <EmbeddedResource Include="UI\AddThemeControl.resx">
+      <DependentUpon>AddThemeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AddUserPage.resx">
       <DependentUpon>AddUserPage.cs</DependentUpon>

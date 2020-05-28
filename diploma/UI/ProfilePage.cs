@@ -22,8 +22,8 @@ namespace diploma.UI
             _presenter = new ProfilePresenter(this);
         }
 
-        public string Login { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string UserName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //public string Login { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //public string UserName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         private void btLogout_Click(object sender, EventArgs e)
         {

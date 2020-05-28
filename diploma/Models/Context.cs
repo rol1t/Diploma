@@ -12,6 +12,7 @@ namespace diploma.Models
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Theme> Themes { get; set; }
 
         public Context()
         {

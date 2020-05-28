@@ -27,7 +27,7 @@ namespace diploma.Presenters
 
                 foreach (var item in adminPages)
                 {
-                    View.MainForm.materialTabControl1.TabPages.Remove(item);
+                    View.MainForm.msTabControl.TabPages.Remove(item);
                 }
             }
         }

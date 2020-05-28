@@ -8,7 +8,7 @@ namespace diploma.Views
 {
     public interface IProfileView
     {
-        string Login { get; set; }
-        string UserName { get; set; }
+        //string Login { get; set; }
+        //string UserName { get; set; }
     }
 }
