@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 33);
             this.label1.TabIndex = 0;
@@ -52,7 +52,6 @@
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Depth = 0;
             this.txtPassword.Font = new System.Drawing.Font("Roboto", 12F);
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -66,11 +65,11 @@
             this.txtPassword.Size = new System.Drawing.Size(426, 50);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.Text = "";
+            this.txtPassword.UseAccent = false;
             // 
             // txtLogin
             // 
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLogin.Depth = 0;
             this.txtLogin.Font = new System.Drawing.Font("Roboto", 12F);
             this.txtLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -83,11 +82,11 @@
             this.txtLogin.Size = new System.Drawing.Size(426, 50);
             this.txtLogin.TabIndex = 4;
             this.txtLogin.Text = "";
+            this.txtLogin.UseAccent = false;
             // 
             // txtUserName
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.Depth = 0;
             this.txtUserName.Font = new System.Drawing.Font("Roboto", 12F);
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -100,11 +99,11 @@
             this.txtUserName.Size = new System.Drawing.Size(426, 50);
             this.txtUserName.TabIndex = 6;
             this.txtUserName.Text = "";
+            this.txtUserName.UseAccent = false;
             // 
             // txtPasswordConfirm
             // 
             this.txtPasswordConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPasswordConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordConfirm.Depth = 0;
             this.txtPasswordConfirm.Font = new System.Drawing.Font("Roboto", 12F);
             this.txtPasswordConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -118,6 +117,7 @@
             this.txtPasswordConfirm.Size = new System.Drawing.Size(426, 50);
             this.txtPasswordConfirm.TabIndex = 7;
             this.txtPasswordConfirm.Text = "";
+            this.txtPasswordConfirm.UseAccent = false;
             // 
             // swIsTeacher
             // 
@@ -158,7 +158,7 @@
             // 
             this.txtError.AutoSize = true;
             this.txtError.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtError.Location = new System.Drawing.Point(3, 328);
+            this.txtError.Location = new System.Drawing.Point(3, 364);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(0, 19);
             this.txtError.TabIndex = 10;

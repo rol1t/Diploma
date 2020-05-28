@@ -19,10 +19,13 @@ namespace diploma
     {
         public IServiceProvider ServiceProvider { get; }
 
+        private readonly LoginPresenter _presenter;
+
         public LoginForm(IServiceProvider sp)
         {
             InitializeComponent();
             ServiceProvider = sp;
+            _presenter = new LoginPresenter(this);
         }
 
         public string Login 
@@ -53,8 +56,12 @@ namespace diploma
 
         private async void loginButton_Click(object sender, EventArgs e)
         {
-            var presenter = new LoginPresenter(this);
-            await presenter.Login();
+            await _presenter.Login();
+        }
+
+        private async void LoginForm_Load(object sender, EventArgs e)
+        {
+            await _presenter.AutoLogin();
         }
     }
 }

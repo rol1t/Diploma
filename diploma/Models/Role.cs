@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace diploma.Models
 {
+    [Serializable]
     public class Role
     {
         public int Id { get; set; }

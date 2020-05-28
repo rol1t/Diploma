@@ -1,4 +1,5 @@
 ﻿using diploma.Models;
+using diploma.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace diploma
         public static void ConfigureServices(ServiceCollection services)
         {
             services.AddScoped<LoginForm>()
-                    .AddDbContext<Context>();
+                    .AddDbContext<Context>()
+                    .AddSingleton<RememberMeManager>();
         }
     }
 }
