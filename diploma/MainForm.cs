@@ -20,12 +20,9 @@ namespace diploma
 
         MainForm IMainView.MainForm => this;
 
-        private readonly IServiceProvider _sp;
-
-        public MainForm(User result, IServiceProvider sp)
+        public MainForm(User result)
         {
             InitializeComponent();
-            _sp = sp;
             User = result;
         }
 

@@ -22,7 +22,8 @@ namespace diploma.Presenters
                 var adminPages = new[]
                 {
                     View.MainForm.addTestPage,
-                    View.MainForm.addUserPage
+                    View.MainForm.addUserPage,
+                    View.MainForm.mcAddTheme
                 };
 
                 foreach (var item in adminPages)

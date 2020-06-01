@@ -33,16 +33,21 @@
             this.msTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.addTestPage = new System.Windows.Forms.TabPage();
             this.addUserPage = new System.Windows.Forms.TabPage();
+            this.addUserPage1 = new diploma.UI.AddUserPage();
             this.testsPage = new System.Windows.Forms.TabPage();
             this.themesPage = new System.Windows.Forms.TabPage();
             this.profilePage = new System.Windows.Forms.TabPage();
-            this.menuIconList = new System.Windows.Forms.ImageList(this.components);
-            this.mcAddTheme = new System.Windows.Forms.TabPage();
-            this.addUserPage1 = new diploma.UI.AddUserPage();
             this.profilePage1 = new diploma.UI.ProfilePage();
+            this.mcAddTheme = new System.Windows.Forms.TabPage();
             this.addThemeControl1 = new diploma.UI.AddThemeControl();
+            this.menuIconList = new System.Windows.Forms.ImageList(this.components);
+            this.themesControl1 = new diploma.UI.ThemesControl();
+            this.themesControl2 = new diploma.UI.ThemesControl();
+            this.themesControl3 = new diploma.UI.ThemesControl();
+            this.themesControl4 = new diploma.UI.ThemesControl();
             this.msTabControl.SuspendLayout();
             this.addUserPage.SuspendLayout();
+            this.themesPage.SuspendLayout();
             this.profilePage.SuspendLayout();
             this.mcAddTheme.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +94,22 @@
             this.addUserPage.Text = "Пользователи";
             this.addUserPage.UseVisualStyleBackColor = true;
             // 
+            // addUserPage1
+            // 
+            this.addUserPage1.BackColor = System.Drawing.Color.White;
+            this.addUserPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addUserPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addUserPage1.IsTeacher = false;
+            this.addUserPage1.Location = new System.Drawing.Point(3, 3);
+            this.addUserPage1.Login = "";
+            this.addUserPage1.Message = "";
+            this.addUserPage1.Name = "addUserPage1";
+            this.addUserPage1.Password = "";
+            this.addUserPage1.PasswordConfirmation = "";
+            this.addUserPage1.Size = new System.Drawing.Size(1009, 514);
+            this.addUserPage1.TabIndex = 0;
+            this.addUserPage1.UserName = "";
+            // 
             // testsPage
             // 
             this.testsPage.ImageKey = "baseline_done_outline_white_24dp.png";
@@ -102,6 +123,7 @@
             // 
             // themesPage
             // 
+            this.themesPage.Controls.Add(this.themesControl4);
             this.themesPage.ImageKey = "outline_library_books_white_24dp.png";
             this.themesPage.Location = new System.Drawing.Point(4, 31);
             this.themesPage.Name = "themesPage";
@@ -123,17 +145,15 @@
             this.profilePage.Text = "Профиль";
             this.profilePage.UseVisualStyleBackColor = true;
             // 
-            // menuIconList
+            // profilePage1
             // 
-            this.menuIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("menuIconList.ImageStream")));
-            this.menuIconList.TransparentColor = System.Drawing.Color.Transparent;
-            this.menuIconList.Images.SetKeyName(0, "baseline_done_outline_white_24dp.png");
-            this.menuIconList.Images.SetKeyName(1, "baseline_add_white_24dp.png");
-            this.menuIconList.Images.SetKeyName(2, "baseline_perm_identity_white_24dp.png");
-            this.menuIconList.Images.SetKeyName(3, "baseline_supervisor_account_white_24dp.png");
-            this.menuIconList.Images.SetKeyName(4, "outline_book_white_24dp.png");
-            this.menuIconList.Images.SetKeyName(5, "outline_people_white_24dp.png");
-            this.menuIconList.Images.SetKeyName(6, "outline_library_books_white_24dp.png");
+            this.profilePage1.BackColor = System.Drawing.Color.White;
+            this.profilePage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profilePage1.ForeColor = System.Drawing.Color.Black;
+            this.profilePage1.Location = new System.Drawing.Point(3, 3);
+            this.profilePage1.Name = "profilePage1";
+            this.profilePage1.Size = new System.Drawing.Size(1009, 514);
+            this.profilePage1.TabIndex = 0;
             // 
             // mcAddTheme
             // 
@@ -147,32 +167,6 @@
             this.mcAddTheme.Text = "Добавить тему";
             this.mcAddTheme.UseVisualStyleBackColor = true;
             // 
-            // addUserPage1
-            // 
-            this.addUserPage1.BackColor = System.Drawing.Color.White;
-            this.addUserPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addUserPage1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.addUserPage1.IsTeacher = false;
-            this.addUserPage1.Location = new System.Drawing.Point(3, 3);
-            this.addUserPage1.Login = "";
-            this.addUserPage1.Message = "";
-            this.addUserPage1.Name = "addUserPage1";
-            this.addUserPage1.Password = "";
-            this.addUserPage1.PasswordConfirmation = "";
-            this.addUserPage1.Size = new System.Drawing.Size(1009, 514);
-            this.addUserPage1.TabIndex = 0;
-            this.addUserPage1.UserName = "";
-            // 
-            // profilePage1
-            // 
-            this.profilePage1.BackColor = System.Drawing.Color.White;
-            this.profilePage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.profilePage1.ForeColor = System.Drawing.Color.Black;
-            this.profilePage1.Location = new System.Drawing.Point(3, 3);
-            this.profilePage1.Name = "profilePage1";
-            this.profilePage1.Size = new System.Drawing.Size(1009, 514);
-            this.profilePage1.TabIndex = 0;
-            // 
             // addThemeControl1
             // 
             this.addThemeControl1.BackColor = System.Drawing.Color.White;
@@ -184,6 +178,54 @@
             this.addThemeControl1.Size = new System.Drawing.Size(1009, 514);
             this.addThemeControl1.TabIndex = 0;
             this.addThemeControl1.ThemeName = "";
+            // 
+            // menuIconList
+            // 
+            this.menuIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("menuIconList.ImageStream")));
+            this.menuIconList.TransparentColor = System.Drawing.Color.Transparent;
+            this.menuIconList.Images.SetKeyName(0, "baseline_done_outline_white_24dp.png");
+            this.menuIconList.Images.SetKeyName(1, "baseline_add_white_24dp.png");
+            this.menuIconList.Images.SetKeyName(2, "baseline_perm_identity_white_24dp.png");
+            this.menuIconList.Images.SetKeyName(3, "baseline_supervisor_account_white_24dp.png");
+            this.menuIconList.Images.SetKeyName(4, "outline_book_white_24dp.png");
+            this.menuIconList.Images.SetKeyName(5, "outline_people_white_24dp.png");
+            this.menuIconList.Images.SetKeyName(6, "outline_library_books_white_24dp.png");
+            // 
+            // themesControl1
+            // 
+            this.themesControl1.Location = new System.Drawing.Point(0, 0);
+            this.themesControl1.Name = "themesControl1";
+            this.themesControl1.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
+            this.themesControl1.Size = new System.Drawing.Size(710, 557);
+            this.themesControl1.TabIndex = 0;
+            this.themesControl1.Themes = null;
+            // 
+            // themesControl2
+            // 
+            this.themesControl2.Location = new System.Drawing.Point(0, 0);
+            this.themesControl2.Name = "themesControl2";
+            this.themesControl2.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
+            this.themesControl2.Size = new System.Drawing.Size(710, 557);
+            this.themesControl2.TabIndex = 0;
+            this.themesControl2.Themes = null;
+            // 
+            // themesControl3
+            // 
+            this.themesControl3.Location = new System.Drawing.Point(0, 0);
+            this.themesControl3.Name = "themesControl3";
+            this.themesControl3.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
+            this.themesControl3.Size = new System.Drawing.Size(710, 557);
+            this.themesControl3.TabIndex = 0;
+            this.themesControl3.Themes = null;
+            // 
+            // themesControl4
+            // 
+            this.themesControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.themesControl4.Location = new System.Drawing.Point(3, 3);
+            this.themesControl4.Name = "themesControl4";
+            this.themesControl4.Size = new System.Drawing.Size(1009, 514);
+            this.themesControl4.TabIndex = 0;
+            this.themesControl4.Themes = null;
             // 
             // MainForm
             // 
@@ -203,6 +245,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.msTabControl.ResumeLayout(false);
             this.addUserPage.ResumeLayout(false);
+            this.themesPage.ResumeLayout(false);
             this.profilePage.ResumeLayout(false);
             this.mcAddTheme.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -215,13 +258,17 @@
         public System.Windows.Forms.TabPage addTestPage;
         public System.Windows.Forms.TabPage addUserPage;
         public System.Windows.Forms.TabPage testsPage;
-        private System.Windows.Forms.TabPage themesPage;
+        public System.Windows.Forms.TabPage themesPage;
         private System.Windows.Forms.ImageList menuIconList;
         private UI.AddUserPage addUserPage1;
-        private System.Windows.Forms.TabPage profilePage;
+        public System.Windows.Forms.TabPage profilePage;
         private UI.ProfilePage profilePage1;
-        private System.Windows.Forms.TabPage mcAddTheme;
+        public System.Windows.Forms.TabPage mcAddTheme;
         private UI.AddThemeControl addThemeControl1;
+        private UI.ThemesControl themesControl1;
+        private UI.ThemesControl themesControl2;
+        private UI.ThemesControl themesControl3;
+        private UI.ThemesControl themesControl4;
     }
 }
 
