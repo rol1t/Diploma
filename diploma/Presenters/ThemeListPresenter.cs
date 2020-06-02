@@ -54,14 +54,9 @@ namespace diploma.Presenters
 
         private bool HasColumn(string name)
         {
-            foreach (DataGridViewColumn item in View.Grid.Columns)
-            {
-                if (item.Name == name)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return View.Grid.Columns
+                .Cast<DataGridViewColumn>()
+                .Any(c => c.Name == name);
         }
     }
 }
