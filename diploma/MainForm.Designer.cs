@@ -36,6 +36,7 @@
             this.addUserPage1 = new diploma.UI.AddUserPage();
             this.testsPage = new System.Windows.Forms.TabPage();
             this.themesPage = new System.Windows.Forms.TabPage();
+            this.themesControl4 = new diploma.UI.ThemesControl();
             this.profilePage = new System.Windows.Forms.TabPage();
             this.profilePage1 = new diploma.UI.ProfilePage();
             this.mcAddTheme = new System.Windows.Forms.TabPage();
@@ -44,9 +45,10 @@
             this.themesControl1 = new diploma.UI.ThemesControl();
             this.themesControl2 = new diploma.UI.ThemesControl();
             this.themesControl3 = new diploma.UI.ThemesControl();
-            this.themesControl4 = new diploma.UI.ThemesControl();
+            this.testConstructorPage1 = new diploma.UI.TestConstructorPage();
             this.msTabControl.SuspendLayout();
             this.addUserPage.SuspendLayout();
+            this.testsPage.SuspendLayout();
             this.themesPage.SuspendLayout();
             this.profilePage.SuspendLayout();
             this.mcAddTheme.SuspendLayout();
@@ -112,6 +114,7 @@
             // 
             // testsPage
             // 
+            this.testsPage.Controls.Add(this.testConstructorPage1);
             this.testsPage.ImageKey = "baseline_done_outline_white_24dp.png";
             this.testsPage.Location = new System.Drawing.Point(4, 31);
             this.testsPage.Name = "testsPage";
@@ -132,6 +135,16 @@
             this.themesPage.TabIndex = 3;
             this.themesPage.Text = "Темы";
             this.themesPage.UseVisualStyleBackColor = true;
+            // 
+            // themesControl4
+            // 
+            this.themesControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.themesControl4.Location = new System.Drawing.Point(3, 3);
+            this.themesControl4.Name = "themesControl4";
+            this.themesControl4.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
+            this.themesControl4.Size = new System.Drawing.Size(1009, 514);
+            this.themesControl4.TabIndex = 0;
+            this.themesControl4.Themes = null;
             // 
             // profilePage
             // 
@@ -218,14 +231,19 @@
             this.themesControl3.TabIndex = 0;
             this.themesControl3.Themes = null;
             // 
-            // themesControl4
+            // testConstructorPage1
             // 
-            this.themesControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.themesControl4.Location = new System.Drawing.Point(3, 3);
-            this.themesControl4.Name = "themesControl4";
-            this.themesControl4.Size = new System.Drawing.Size(1009, 514);
-            this.themesControl4.TabIndex = 0;
-            this.themesControl4.Themes = null;
+            this.testConstructorPage1.BackColor = System.Drawing.Color.White;
+            this.testConstructorPage1.Description = "";
+            this.testConstructorPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.testConstructorPage1.Location = new System.Drawing.Point(3, 3);
+            this.testConstructorPage1.Message = "";
+            this.testConstructorPage1.Name = "testConstructorPage1";
+            this.testConstructorPage1.Padding = new System.Windows.Forms.Padding(10, 90, 10, 50);
+            this.testConstructorPage1.Size = new System.Drawing.Size(1009, 514);
+            this.testConstructorPage1.TabIndex = 0;
+            this.testConstructorPage1.TestName = "";
+            this.testConstructorPage1.Time = "";
             // 
             // MainForm
             // 
@@ -245,6 +263,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.msTabControl.ResumeLayout(false);
             this.addUserPage.ResumeLayout(false);
+            this.testsPage.ResumeLayout(false);
             this.themesPage.ResumeLayout(false);
             this.profilePage.ResumeLayout(false);
             this.mcAddTheme.ResumeLayout(false);
@@ -269,6 +288,7 @@
         private UI.ThemesControl themesControl2;
         private UI.ThemesControl themesControl3;
         private UI.ThemesControl themesControl4;
+        private UI.TestConstructorPage testConstructorPage1;
     }
 }
 

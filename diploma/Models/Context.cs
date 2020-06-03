@@ -13,6 +13,10 @@ namespace diploma.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Theme> Themes { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Variant> Variants { get; set; }
+        public DbSet<Result> Results { get; set; }
 
         public Context()
         {

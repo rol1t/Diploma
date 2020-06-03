@@ -13,6 +13,8 @@ namespace diploma.Models
         public string Description { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public IEnumerable<Question> Questions { get; set; }
+        public decimal Time { get; internal set; }
+        public List<Question> Questions { get; set; }
+        public List<Theme> Themes { get; set; }
     }
 }
