@@ -38,7 +38,17 @@ namespace diploma.Presenters
             View.QuestionGr.ReadOnly = true;
             View.QuestionGr.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            UpdateQuestions();
             UpdateAllThemes();
+        }
+
+        private void UpdateQuestions()
+        {
+            using var context = new Context();
+            View.QuestionGr.DataSource = context.Tests
+                            .Include(t => t.Questions)
+                            .FirstOrDefault(t => t.Id == View.TestId)
+                            .Questions;
         }
 
         public void UpdateAllThemes()
@@ -104,6 +114,9 @@ namespace diploma.Presenters
             {   
                 return;
             }
+            var form = new QuestionEditor(questionId.Value);
+            form.ShowDialog();
+            UpdateQuestions();
         }
 
         public void LinkTheme(int themeId)

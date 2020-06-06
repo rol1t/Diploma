@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using diploma.Models;
 
 namespace diploma.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200606175725_Change_IsMultivariantNotNull")]
+    partial class Change_IsMultivariantNotNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,6 +27,12 @@ namespace diploma.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AccurateRate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Attempts")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -202,12 +210,17 @@ namespace diploma.Migrations
                     b.Property<int?>("QuestionId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("QuestionId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("QuestionId");
+
+                    b.HasIndex("QuestionId1");
 
                     b.ToTable("Variants");
                 });
@@ -256,8 +269,12 @@ namespace diploma.Migrations
             modelBuilder.Entity("diploma.Models.Variant", b =>
                 {
                     b.HasOne("diploma.Models.Question", null)
-                        .WithMany("Variants")
+                        .WithMany("TrueVariants")
                         .HasForeignKey("QuestionId");
+
+                    b.HasOne("diploma.Models.Question", null)
+                        .WithMany("Variants")
+                        .HasForeignKey("QuestionId1");
                 });
 #pragma warning restore 612, 618
         }

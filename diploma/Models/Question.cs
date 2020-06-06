@@ -11,10 +11,11 @@ namespace diploma.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public bool? IsMultiVariants { get; set; }
+        public bool IsMultiVariants { get; set; }
         public IEnumerable<Variant> Variants { get; set; }
-        public IEnumerable<Variant> TrueVariants { get; set; }
-        public int? AccurateRate { get; set; }
-        public int Attempts { get; set; }
+
+        //public IEnumerable<Variant> TrueVariants { get; set; }
+        //public int? AccurateRate { get; set; }
+        //public int Attempts { get; set; }
     }
 }

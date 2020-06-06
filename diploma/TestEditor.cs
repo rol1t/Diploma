@@ -95,5 +95,10 @@ namespace diploma
         {
             _presenter.DeleteQuestion();
         }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            _presenter.EditQuestion();
+        }
     }
 }

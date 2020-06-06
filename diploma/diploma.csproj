@@ -204,6 +204,14 @@
     <Compile Include="Migrations\20200603181317_jepa.designer.cs">
       <DependentUpon>20200603181317_jepa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200606175725_Change_IsMultivariantNotNull.cs" />
+    <Compile Include="Migrations\20200606175725_Change_IsMultivariantNotNull.designer.cs">
+      <DependentUpon>20200606175725_Change_IsMultivariantNotNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200606190121_Edit_SomeQuestionFieldDeleted.cs" />
+    <Compile Include="Migrations\20200606190121_Edit_SomeQuestionFieldDeleted.designer.cs">
+      <DependentUpon>20200606190121_Edit_SomeQuestionFieldDeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Question.cs" />

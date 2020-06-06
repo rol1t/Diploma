@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using diploma.Models;
+using MaterialSkin.Controls;
 
 namespace diploma.Views
 {
@@ -13,7 +15,8 @@ namespace diploma.Views
         public string QuestionName { get; set; }
         public string Description { get; set; }
         public bool IsMulti { get; set; }
+        public string VariantName { get; set; }
         public List<Variant> Variants { get; set; }
-        public Dictionary<string, bool> VariantsListItem { get; }
+        public CheckedListBox VariantList { get; }
     }
 }

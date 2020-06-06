@@ -31,19 +31,19 @@
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.txtQuestionName = new MaterialSkin.Controls.MaterialTextBox();
             this.btAddVariant = new MaterialSkin.Controls.MaterialButton();
-            this.cblVariants = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.txtVariant = new MaterialSkin.Controls.MaterialTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btSaveQuestion = new MaterialSkin.Controls.MaterialButton();
             this.cbIsMulti = new MaterialSkin.Controls.MaterialCheckbox();
+            this.cblVariants = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(12, 161);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(351, 294);
+            this.txtDescription.Size = new System.Drawing.Size(351, 279);
             this.txtDescription.TabIndex = 0;
             this.txtDescription.Text = "";
             // 
@@ -80,19 +80,7 @@
             this.btAddVariant.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.btAddVariant.UseAccentColor = false;
             this.btAddVariant.UseVisualStyleBackColor = true;
-            // 
-            // cblVariants
-            // 
-            this.cblVariants.AutoScroll = true;
-            this.cblVariants.BackColor = System.Drawing.SystemColors.Control;
-            this.cblVariants.Depth = 0;
-            this.cblVariants.Location = new System.Drawing.Point(369, 161);
-            this.cblVariants.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cblVariants.Name = "cblVariants";
-            this.cblVariants.Size = new System.Drawing.Size(498, 294);
-            this.cblVariants.Striped = false;
-            this.cblVariants.StripeDarkColor = System.Drawing.Color.Empty;
-            this.cblVariants.TabIndex = 3;
+            this.btAddVariant.Click += new System.EventHandler(this.btAddVariant_Click);
             // 
             // txtVariant
             // 
@@ -147,6 +135,7 @@
             this.btSaveQuestion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btSaveQuestion.UseAccentColor = false;
             this.btSaveQuestion.UseVisualStyleBackColor = true;
+            this.btSaveQuestion.Click += new System.EventHandler(this.btSaveQuestion_Click);
             // 
             // cbIsMulti
             // 
@@ -161,18 +150,29 @@
             this.cbIsMulti.TabIndex = 8;
             this.cbIsMulti.Text = "У вопроса несколько вариантров ответа";
             this.cbIsMulti.UseVisualStyleBackColor = true;
+            this.cbIsMulti.CheckedChanged += new System.EventHandler(this.cbIsMulti_CheckedChanged);
+            // 
+            // cblVariants
+            // 
+            this.cblVariants.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cblVariants.FormattingEnabled = true;
+            this.cblVariants.Location = new System.Drawing.Point(369, 161);
+            this.cblVariants.Name = "cblVariants";
+            this.cblVariants.Size = new System.Drawing.Size(489, 279);
+            this.cblVariants.TabIndex = 9;
+            this.cblVariants.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cblVariants_ItemCheck);
             // 
             // QuestionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 554);
+            this.Controls.Add(this.cblVariants);
             this.Controls.Add(this.cbIsMulti);
             this.Controls.Add(this.btSaveQuestion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtVariant);
-            this.Controls.Add(this.cblVariants);
             this.Controls.Add(this.btAddVariant);
             this.Controls.Add(this.txtQuestionName);
             this.Controls.Add(this.txtDescription);
@@ -188,11 +188,11 @@
         private System.Windows.Forms.RichTextBox txtDescription;
         private MaterialSkin.Controls.MaterialTextBox txtQuestionName;
         private MaterialSkin.Controls.MaterialButton btAddVariant;
-        private MaterialSkin.Controls.MaterialCheckedListBox cblVariants;
         private MaterialSkin.Controls.MaterialTextBox txtVariant;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialButton btSaveQuestion;
         private MaterialSkin.Controls.MaterialCheckbox cbIsMulti;
+        private System.Windows.Forms.CheckedListBox cblVariants;
     }
 }
