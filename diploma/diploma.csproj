@@ -231,6 +231,7 @@
     <Compile Include="Presenters\ProfilePresenter.cs" />
     <Compile Include="Presenters\QuestionEditorPesenter.cs" />
     <Compile Include="Presenters\TestEditorPresenter.cs" />
+    <Compile Include="Presenters\TestsPresenter.cs" />
     <Compile Include="Presenters\ThemeListPresenter.cs" />
     <Compile Include="Presenters\ThemeReaderPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -249,6 +250,12 @@
     </Compile>
     <Compile Include="TestEditor.Designer.cs">
       <DependentUpon>TestEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestInfoForm.Designer.cs">
+      <DependentUpon>TestInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemeReader.cs">
       <SubType>Form</SubType>
@@ -280,6 +287,12 @@
     <Compile Include="UI\TestConstructorPage.Designer.cs">
       <DependentUpon>TestConstructorPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TestsPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TestsPageControl.Designer.cs">
+      <DependentUpon>TestsPageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ThemesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -298,6 +311,7 @@
     <Compile Include="Views\ITestEditorView.cs" />
     <Compile Include="Views\IThemeReaderView.cs" />
     <Compile Include="Views\IThemesView.cs" />
+    <Compile Include="Views\ITestsPageView.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TestConstructorPage.resx">
       <DependentUpon>TestConstructorPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TestsPageControl.resx">
+      <DependentUpon>TestsPageControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThemesControl.resx">
       <DependentUpon>ThemesControl.cs</DependentUpon>

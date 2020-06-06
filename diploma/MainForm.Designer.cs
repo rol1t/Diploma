@@ -47,8 +47,8 @@
             this.themesControl3 = new diploma.UI.ThemesControl();
             this.testConstructorPage1 = new diploma.UI.TestConstructorPage();
             this.msTabControl.SuspendLayout();
+            this.addTestPage.SuspendLayout();
             this.addUserPage.SuspendLayout();
-            this.testsPage.SuspendLayout();
             this.themesPage.SuspendLayout();
             this.profilePage.SuspendLayout();
             this.mcAddTheme.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             // addTestPage
             // 
+            this.addTestPage.Controls.Add(this.testConstructorPage1);
             this.addTestPage.ImageKey = "baseline_add_white_24dp.png";
             this.addTestPage.Location = new System.Drawing.Point(4, 31);
             this.addTestPage.Name = "addTestPage";
@@ -114,7 +115,6 @@
             // 
             // testsPage
             // 
-            this.testsPage.Controls.Add(this.testConstructorPage1);
             this.testsPage.ImageKey = "baseline_done_outline_white_24dp.png";
             this.testsPage.Location = new System.Drawing.Point(4, 31);
             this.testsPage.Name = "testsPage";
@@ -262,8 +262,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.msTabControl.ResumeLayout(false);
+            this.addTestPage.ResumeLayout(false);
             this.addUserPage.ResumeLayout(false);
-            this.testsPage.ResumeLayout(false);
             this.themesPage.ResumeLayout(false);
             this.profilePage.ResumeLayout(false);
             this.mcAddTheme.ResumeLayout(false);
