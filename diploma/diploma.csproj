@@ -216,6 +216,10 @@
     <Compile Include="Migrations\20200607191157_allBroken.designer.cs">
       <DependentUpon>20200607191157_allBroken.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200607191641_Add_ResultToTest.cs" />
+    <Compile Include="Migrations\20200607191641_Add_ResultToTest.designer.cs">
+      <DependentUpon>20200607191641_Add_ResultToTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Question.cs" />

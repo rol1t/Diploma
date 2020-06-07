@@ -60,16 +60,16 @@ namespace diploma.Models
                     new Role { Id = 1, Name = "Учитель" },
                     new Role { Id = 2, Name = "Ученик" }
                 });
-            //modelBuilder.Entity<Result>()
-            //    .HasOne(r => r.User)
-            //    .WithMany(r => r.Results)
-            //    .HasForeignKey(r => r.UserId)
-            //    .OnDelete(DeleteBehavior.Restrict);
-            //modelBuilder.Entity<Result>()
-            //    .HasOne(r => r.Test)
-            //    .WithMany(r => r.Results)
-            //    .HasForeignKey(r => r.TestId)
-            //    .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Result>()
+                .HasOne(r => r.User)
+                .WithMany(r => r.Results)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Result>()
+                .HasOne(r => r.Test)
+                .WithMany(r => r.Results)
+                .HasForeignKey(r => r.TestId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

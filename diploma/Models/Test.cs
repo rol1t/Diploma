@@ -18,6 +18,6 @@ namespace diploma.Models
         public List<Theme> Themes { get; set; }
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
-        //public IEnumerable<Result> Results { get; set; }
+        public IEnumerable<Result> Results { get; set; }
     }
 }

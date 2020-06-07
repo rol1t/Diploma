@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace diploma.Models
 {
@@ -20,6 +17,7 @@ namespace diploma.Models
         public int RoleId { get; set; }
 
         public Role Role { get; set; }
-        //public IEnumerable<Result> Results { get; set; }
+
+        public IEnumerable<Result> Results { get; set; }
     }
 }
