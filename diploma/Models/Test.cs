@@ -16,5 +16,8 @@ namespace diploma.Models
         public decimal Time { get; internal set; }
         public List<Question> Questions { get; set; }
         public List<Theme> Themes { get; set; }
+        public int SubjectId { get; set; }
+        public Subject Subject { get; set; }
+        //public IEnumerable<Result> Results { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace diploma.Presenters
     {
         public TestsPresenter(ITestsPageView view) : base(view)
         {
+            Init();
         }
 
         public void Init()
@@ -32,8 +33,11 @@ namespace diploma.Presenters
 
         public async Task UpdateTests()
         {
-            using var context = new Context();
-            View.Tests = await context.Tests.ToListAsync();
+            using (var context = new Context())
+            {
+                View.Tests = await context.Tests.ToListAsync();
+            }
+            
         }
 
         public void OpenTest()

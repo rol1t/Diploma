@@ -1,6 +1,6 @@
 ﻿namespace diploma.UI
 {
-    partial class ThemesControl
+    partial class TestPageCustomControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -32,10 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.label1 = new System.Windows.Forms.Label();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(4, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 33);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Тесты";
             // 
             // metroGrid1
             // 
@@ -66,7 +77,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(5, 50);
+            this.metroGrid1.Location = new System.Drawing.Point(10, 60);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -84,30 +95,41 @@
             this.metroGrid1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.metroGrid1.RowTemplate.Height = 50;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(919, 610);
-            this.metroGrid1.TabIndex = 0;
+            this.metroGrid1.Size = new System.Drawing.Size(838, 489);
+            this.metroGrid1.TabIndex = 3;
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroGrid1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellDoubleClick);
+            this.metroGrid1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.metroGrid1_CellMouseDoubleClick);
             // 
-            // label1
+            // materialButton1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(8, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 33);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Темы";
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(92, 6);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(101, 36);
+            this.materialButton1.TabIndex = 4;
+            this.materialButton1.Text = "Изменить";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // ThemesControl
+            // TestPageCustomControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.metroGrid1);
-            this.Name = "ThemesControl";
-            this.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
-            this.Size = new System.Drawing.Size(929, 665);
+            this.Controls.Add(this.label1);
+            this.Name = "TestPageCustomControl";
+            this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 10);
+            this.Size = new System.Drawing.Size(858, 559);
+            this.Load += new System.EventHandler(this.TestPageCustomControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,7 +138,8 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroGrid metroGrid1;
         private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

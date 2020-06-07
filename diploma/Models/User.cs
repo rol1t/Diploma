@@ -20,5 +20,6 @@ namespace diploma.Models
         public int RoleId { get; set; }
 
         public Role Role { get; set; }
+        //public IEnumerable<Result> Results { get; set; }
     }
 }

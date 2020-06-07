@@ -1,5 +1,6 @@
 ﻿using diploma.Models;
 using diploma.Presenters;
+using diploma.UI;
 using diploma.Views;
 using MaterialSkin.Controls;
 using System;
@@ -24,6 +25,7 @@ namespace diploma
         {
             InitializeComponent();
             User = result;
+            testsPage.Controls.Add(new TestPageCustomControl());
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

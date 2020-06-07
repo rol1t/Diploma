@@ -42,7 +42,6 @@ namespace diploma.Presenters
                         rmManager.RemoveUser();
                     }
 
-                    GetUserDataService.CurrentUser = result;
                     ShowMainForm(result);
                 }
             }
@@ -70,9 +69,9 @@ namespace diploma.Presenters
 
         private void ShowMainForm(User result)
         {
+            GetUserDataService.CurrentUser = result;
             View.LoginForm.Hide();
             var mainForm = new MainForm(result);
-            GetUserDataService.CurrentUser = result;
             mainForm.Show();
         }
     }
