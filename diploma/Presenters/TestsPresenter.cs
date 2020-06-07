@@ -48,7 +48,8 @@ namespace diploma.Presenters
             }
             using var context = new Context();
             var loadedTest = context.Tests
-                .Include(t => t.Themes)
+                .Include(t => t.TestThemes)
+                .ThenInclude(tt => tt.Theme)
                 .Include(t => t.Questions)
                 .FirstOrDefault(t => t.Id == View.SelectedTest.Id);
             var form = new TestInfoForm(View.SelectedTest);

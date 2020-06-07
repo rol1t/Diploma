@@ -13,7 +13,7 @@ namespace diploma.Models
         public string Description { get; set; }
         public bool IsMultiVariants { get; set; }
         public IEnumerable<Variant> Variants { get; set; }
-
+        public int Points { get; set; }
         //public IEnumerable<Variant> TrueVariants { get; set; }
         //public int? AccurateRate { get; set; }
         //public int Attempts { get; set; }

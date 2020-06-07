@@ -18,6 +18,7 @@ namespace diploma.Models
         public DbSet<Variant> Variants { get; set; }
         public DbSet<Result> Results { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<TestTheme> TestThemes { get; set; }
 
         public Context()
         {
@@ -31,6 +32,7 @@ namespace diploma.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //User
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Login)
                 .IsUnique();
@@ -54,12 +56,16 @@ namespace diploma.Models
                         RoleId = 2
                     }
                 });
+
+            //Role
             modelBuilder.Entity<Role>()
                 .HasData(new Role[]
                 {
                     new Role { Id = 1, Name = "Учитель" },
                     new Role { Id = 2, Name = "Ученик" }
                 });
+
+            //Result
             modelBuilder.Entity<Result>()
                 .HasOne(r => r.User)
                 .WithMany(r => r.Results)
@@ -70,6 +76,18 @@ namespace diploma.Models
                 .WithMany(r => r.Results)
                 .HasForeignKey(r => r.TestId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            //TestThemes
+            modelBuilder.Entity<TestTheme>()
+                .HasOne(tt => tt.Test)
+                .WithMany(tt => tt.TestThemes)
+                .HasForeignKey(tt => tt.TestId);
+            modelBuilder.Entity<TestTheme>()
+                 .HasOne(tt => tt.Theme)
+                 .WithMany(tt => tt.TestThemes)
+                 .HasForeignKey(tt => tt.ThemeId);
+            modelBuilder.Entity<TestTheme>()
+                .HasKey(tt => new { tt.TestId, tt.ThemeId });
         }
     }
 }

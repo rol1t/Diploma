@@ -15,7 +15,8 @@ namespace diploma.Models
         /// Rtf content file
         /// </summary>
         public string Content { get; set; }
-        public int SubjectId { get; set; }
+        public int? SubjectId { get; set; }
         public Subject Subject { get; set; }
+        public IEnumerable<TestTheme> TestThemes { get; set; }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using diploma.Models;
 
 namespace diploma.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200607193609_meh2")]
+    partial class meh2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,9 +36,6 @@ namespace diploma.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Points")
-                        .HasColumnType("int");
 
                     b.Property<int?>("TestId")
                         .HasColumnType("int");
@@ -128,7 +127,7 @@ namespace diploma.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SubjectId")
+                    b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Time")
@@ -144,21 +143,6 @@ namespace diploma.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Tests");
-                });
-
-            modelBuilder.Entity("diploma.Models.TestTheme", b =>
-                {
-                    b.Property<int>("TestId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ThemeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TestId", "ThemeId");
-
-                    b.HasIndex("ThemeId");
-
-                    b.ToTable("TestThemes");
                 });
 
             modelBuilder.Entity("diploma.Models.Theme", b =>
@@ -177,9 +161,14 @@ namespace diploma.Migrations
                     b.Property<int?>("SubjectId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TestId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("SubjectId");
+
+                    b.HasIndex("TestId");
 
                     b.ToTable("Themes");
                 });
@@ -281,26 +270,13 @@ namespace diploma.Migrations
                 {
                     b.HasOne("diploma.Models.Subject", "Subject")
                         .WithMany("Tests")
-                        .HasForeignKey("SubjectId");
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("diploma.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("diploma.Models.TestTheme", b =>
-                {
-                    b.HasOne("diploma.Models.Test", "Test")
-                        .WithMany("TestThemes")
-                        .HasForeignKey("TestId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("diploma.Models.Theme", "Theme")
-                        .WithMany("TestThemes")
-                        .HasForeignKey("ThemeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -310,6 +286,10 @@ namespace diploma.Migrations
                     b.HasOne("diploma.Models.Subject", "Subject")
                         .WithMany("Themes")
                         .HasForeignKey("SubjectId");
+
+                    b.HasOne("diploma.Models.Test", null)
+                        .WithMany("Themes")
+                        .HasForeignKey("TestId");
                 });
 
             modelBuilder.Entity("diploma.Models.User", b =>

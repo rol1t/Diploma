@@ -56,9 +56,10 @@ namespace diploma.Presenters
             using var context = new Context();
             View.AllThemes = context.Themes;
             View.Themes = context.Tests
-                .Include(t => t.Themes)
+                .Include(t => t.TestThemes)
+                .ThenInclude(t => t.Theme)
                 .FirstOrDefault(t => t.Id == View.TestId)
-                .Themes;
+                .TestThemes.Select(tt => tt.Theme);
         }
 
         public void AddQuestion()
@@ -122,11 +123,20 @@ namespace diploma.Presenters
         public void LinkTheme(int themeId)
         {
             using var contex = new Context();
-            var test = contex.Tests.Include(t => t.Themes).FirstOrDefault(t => t.Id == View.TestId);
-            var theme = contex.Themes.FirstOrDefault(t => t.Id == themeId);
-            test.Themes.Add(theme);
+            var test = contex.Tests
+                .Include(t => t.TestThemes)
+                .ThenInclude(tt => tt.Theme)
+                .FirstOrDefault(t => t.Id == View.TestId);
+            var theme = new TestTheme
+            {
+                Theme = contex.Themes.FirstOrDefault(t => t.Id == themeId),
+                Test = test
+            };
+            test.TestThemes.Add(theme);
             contex.SaveChanges();
-            View.Themes = test.Themes.Select(t => new Theme { Id = t.Id, Name = t.Name });
+            View.Themes = test.TestThemes
+                .Select(t => t.Theme)
+                .Select(t => new Theme { Id = t.Id, Name = t.Name });
             UpdateAllThemes();
         }
 
@@ -145,11 +155,16 @@ namespace diploma.Presenters
             {
                 return;
             }
-            var test = contex.Tests.Include(t => t.Themes).FirstOrDefault(t => t.Id == View.TestId);
-            var theme = contex.Themes.FirstOrDefault(t => t.Id == themeId);
-            test.Themes.Remove(theme);
+            var test = contex.Tests
+                .Include(t => t.TestThemes)
+                .ThenInclude(tt => tt.Theme)
+                .FirstOrDefault(t => t.Id == View.TestId);
+            var theme = contex.TestThemes.FirstOrDefault(t => t.ThemeId == themeId);
+            test.TestThemes.Remove(theme);
             contex.SaveChanges();
-            View.Themes = test.Themes.Select(t => new Theme { Id = t.Id, Name = t.Name });
+            View.Themes = test.TestThemes
+                .Select(tt => tt.Theme)
+                .Select(t => new Theme { Id = t.Id, Name = t.Name });
             UpdateAllThemes();
         }
     }

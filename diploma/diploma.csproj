@@ -220,6 +220,22 @@
     <Compile Include="Migrations\20200607191641_Add_ResultToTest.designer.cs">
       <DependentUpon>20200607191641_Add_ResultToTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200607193609_meh2.cs" />
+    <Compile Include="Migrations\20200607193609_meh2.designer.cs">
+      <DependentUpon>20200607193609_meh2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200607193659_meh3.cs" />
+    <Compile Include="Migrations\20200607193659_meh3.designer.cs">
+      <DependentUpon>20200607193659_meh3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200607200049_add_TestThemeRelation.cs" />
+    <Compile Include="Migrations\20200607200049_add_TestThemeRelation.designer.cs">
+      <DependentUpon>20200607200049_add_TestThemeRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200607204044_Add_PointsToScore.cs" />
+    <Compile Include="Migrations\20200607204044_Add_PointsToScore.designer.cs">
+      <DependentUpon>20200607204044_Add_PointsToScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Question.cs" />
@@ -227,6 +243,7 @@
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\TestTheme.cs" />
     <Compile Include="Models\Theme.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Variant.cs" />
