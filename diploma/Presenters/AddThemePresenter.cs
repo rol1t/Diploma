@@ -1,5 +1,6 @@
 ﻿using diploma.Models;
 using diploma.Views;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,9 @@ namespace diploma.Presenters
             {
                 context.Themes.Add(theme);
                 context.SaveChanges();
-                View.Message = "Добавлено!";
+                MaterialMessageBox.Show("Тема добавлена!");
+                View.ThemeName = string.Empty;
+                View.Content.Text = string.Empty;
             }
         }
     }

@@ -43,7 +43,7 @@
             this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(4, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 33);
+            this.label1.Size = new System.Drawing.Size(266, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Конструктор тестов";
             // 
@@ -135,7 +135,7 @@
             // 
             this.txtMessage.AutoSize = true;
             this.txtMessage.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtMessage.Location = new System.Drawing.Point(6, 301);
+            this.txtMessage.Location = new System.Drawing.Point(13, 359);
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(0, 23);
             this.txtMessage.TabIndex = 16;

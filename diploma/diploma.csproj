@@ -236,6 +236,10 @@
     <Compile Include="Migrations\20200607204044_Add_PointsToScore.designer.cs">
       <DependentUpon>20200607204044_Add_PointsToScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200609164559_LinkQuestionWithVariant.cs" />
+    <Compile Include="Migrations\20200609164559_LinkQuestionWithVariant.designer.cs">
+      <DependentUpon>20200609164559_LinkQuestionWithVariant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Question.cs" />
@@ -257,6 +261,8 @@
     <Compile Include="Presenters\ProfilePresenter.cs" />
     <Compile Include="Presenters\QuestionEditorPesenter.cs" />
     <Compile Include="Presenters\TestEditorPresenter.cs" />
+    <Compile Include="Presenters\TestInfoPresenter.cs" />
+    <Compile Include="Presenters\TestPresenter.cs" />
     <Compile Include="Presenters\TestsPresenter.cs" />
     <Compile Include="Presenters\ThemeListPresenter.cs" />
     <Compile Include="Presenters\ThemeReaderPresenter.cs" />
@@ -276,6 +282,12 @@
     </Compile>
     <Compile Include="TestEditor.Designer.cs">
       <DependentUpon>TestEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TestInfoForm.cs">
       <SubType>Form</SubType>
@@ -335,6 +347,8 @@
     <Compile Include="Views\IQuestionEditorView.cs" />
     <Compile Include="Views\ITestConstructorView.cs" />
     <Compile Include="Views\ITestEditorView.cs" />
+    <Compile Include="Views\ITestInfoView.cs" />
+    <Compile Include="Views\ITestView.cs" />
     <Compile Include="Views\IThemeReaderView.cs" />
     <Compile Include="Views\IThemesView.cs" />
     <Compile Include="Views\ITestsPageView.cs" />
@@ -352,12 +366,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuestionEditor.resx">
       <DependentUpon>QuestionEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestEditor.resx">
       <DependentUpon>TestEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestInfoForm.resx">
+      <DependentUpon>TestInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemeReader.resx">
       <DependentUpon>ThemeReader.cs</DependentUpon>
@@ -402,6 +423,8 @@
     <Content Include="Resources\baseline_supervisor_account_white_24dp.png" />
     <Content Include="Resources\outline_account_box_white_24dp.png" />
     <Content Include="Resources\outline_book_white_24dp.png" />
+    <None Include="Resources\outline_keyboard_arrow_left_black_18dp.png" />
+    <None Include="Resources\outline_keyboard_arrow_right_black_18dp.png" />
     <Content Include="Resources\outline_people_white_24dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

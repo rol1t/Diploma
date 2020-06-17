@@ -21,7 +21,7 @@ namespace diploma.UI
         {
             InitializeComponent();
             _presenter = new TestsPresenter(this);
-            _presenter.UpdateTests();
+            _presenter.UpdateTests().ConfigureAwait(true);
         }
 
         public List<Test> Tests 
@@ -36,7 +36,7 @@ namespace diploma.UI
                     item.Visible = false;
                 }
                 c["Name"].Visible = true;
-                c["Name"].HeaderText = "Название тесты";
+                c["Name"].HeaderText = "Название теста";
                 metroGrid1.ReadOnly = true;
                 metroGrid1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
@@ -61,6 +61,16 @@ namespace diploma.UI
         private void metroGrid1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             _presenter.OpenTest();
+        }
+
+        private async void TestPageCustomControl_Enter(object sender, EventArgs e)
+        {
+            await _presenter.UpdateTests();
+        }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

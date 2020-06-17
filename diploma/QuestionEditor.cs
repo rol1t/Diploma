@@ -55,5 +55,10 @@ namespace diploma
             _presenter.SaveQuestion();
             Close();
         }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            _presenter.DeleteVariant();
+        }
     }
 }

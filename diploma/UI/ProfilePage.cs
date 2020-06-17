@@ -29,5 +29,10 @@ namespace diploma.UI
         {
             _presenter.Logout();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

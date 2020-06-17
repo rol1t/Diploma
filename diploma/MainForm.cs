@@ -26,6 +26,7 @@ namespace diploma
             InitializeComponent();
             User = result;
             testsPage.Controls.Add(new TestPageCustomControl());
+            testsPage.BackColor = Color.White;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -21,7 +21,7 @@ namespace diploma.UI
         {
             InitializeComponent();
             _presenter = new ThemeListPresenter(this);
-            _presenter.LoadThemes().ContinueWith((t) => _presenter.ConfigureGrid());
+            _presenter.LoadThemes().ContinueWith((t) => _presenter.ConfigureGrid()).ConfigureAwait(true);
         }
 
         public List<Theme> Themes 
@@ -44,6 +44,11 @@ namespace diploma.UI
         private void metroGrid1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             _presenter.OpenTheme(e);
+        }
+
+        private void ThemesControl_Enter(object sender, EventArgs e)
+        {
+            _presenter.LoadThemes();
         }
     }
 }

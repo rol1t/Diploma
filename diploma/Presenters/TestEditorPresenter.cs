@@ -22,17 +22,14 @@ namespace diploma.Presenters
             View.TestId = test.Id;
             View.FormTitle = test.Name;
             View.ThemeGr.DataSource = new List<Theme>();
-            View.ThemeGr.Columns["Id"].Visible = false;
-            View.ThemeGr.Columns["Content"].Visible = false;
+            HideAllColumns(View.ThemeGr);
+            View.ThemeGr.Columns["Name"].Visible = true;
             View.ThemeGr.Columns["Name"].HeaderText = "Название темы";
             View.ThemeGr.ReadOnly = true;
             View.ThemeGr.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             View.QuestionGr.DataSource = new List<Question>();
-            foreach (var item in View.QuestionGr.Columns.Cast<DataGridViewColumn>())
-            {
-                item.Visible = false;
-            }
+            HideAllColumns(View.QuestionGr);
             View.QuestionGr.Columns["Name"].HeaderText = "Название вопроса";
             View.QuestionGr.Columns["Name"].Visible = true;
             View.QuestionGr.ReadOnly = true;
@@ -40,15 +37,6 @@ namespace diploma.Presenters
 
             UpdateQuestions();
             UpdateAllThemes();
-        }
-
-        private void UpdateQuestions()
-        {
-            using var context = new Context();
-            View.QuestionGr.DataSource = context.Tests
-                            .Include(t => t.Questions)
-                            .FirstOrDefault(t => t.Id == View.TestId)
-                            .Questions;
         }
 
         public void UpdateAllThemes()
@@ -167,5 +155,23 @@ namespace diploma.Presenters
                 .Select(t => new Theme { Id = t.Id, Name = t.Name });
             UpdateAllThemes();
         }
+
+        private void HideAllColumns(DataGridView grid)
+        {
+            foreach (var item in grid.Columns.Cast<DataGridViewColumn>())
+            {
+                item.Visible = false;
+            }
+        }
+
+        private void UpdateQuestions()
+        {
+            using var context = new Context();
+            View.QuestionGr.DataSource = context.Tests
+                            .Include(t => t.Questions)
+                            .FirstOrDefault(t => t.Id == View.TestId)
+                            .Questions;
+        }
+
     }
 }

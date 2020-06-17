@@ -37,10 +37,12 @@
             this.btSaveQuestion = new MaterialSkin.Controls.MaterialButton();
             this.cbIsMulti = new MaterialSkin.Controls.MaterialCheckbox();
             this.cblVariants = new System.Windows.Forms.CheckedListBox();
+            this.btDelete = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // txtDescription
             // 
+            this.txtDescription.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtDescription.Location = new System.Drawing.Point(12, 161);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(351, 279);
@@ -70,7 +72,7 @@
             this.btAddVariant.DrawShadows = true;
             this.btAddVariant.HighEmphasis = true;
             this.btAddVariant.Icon = null;
-            this.btAddVariant.Location = new System.Drawing.Point(758, 504);
+            this.btAddVariant.Location = new System.Drawing.Point(749, 503);
             this.btAddVariant.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btAddVariant.MouseState = MaterialSkin.MouseState.HOVER;
             this.btAddVariant.Name = "btAddVariant";
@@ -88,12 +90,12 @@
             this.txtVariant.Depth = 0;
             this.txtVariant.Font = new System.Drawing.Font("Roboto", 12F);
             this.txtVariant.Hint = "Текст варианта ответа";
-            this.txtVariant.Location = new System.Drawing.Point(369, 465);
-            this.txtVariant.MaxLength = 50;
+            this.txtVariant.Location = new System.Drawing.Point(375, 458);
+            this.txtVariant.MaxLength = 500;
             this.txtVariant.MouseState = MaterialSkin.MouseState.OUT;
             this.txtVariant.Multiline = false;
             this.txtVariant.Name = "txtVariant";
-            this.txtVariant.Size = new System.Drawing.Size(498, 36);
+            this.txtVariant.Size = new System.Drawing.Size(483, 36);
             this.txtVariant.TabIndex = 4;
             this.txtVariant.Text = "";
             this.txtVariant.UseTallSize = false;
@@ -140,7 +142,7 @@
             // cbIsMulti
             // 
             this.cbIsMulti.Depth = 0;
-            this.cbIsMulti.Location = new System.Drawing.Point(369, 504);
+            this.cbIsMulti.Location = new System.Drawing.Point(12, 458);
             this.cbIsMulti.Margin = new System.Windows.Forms.Padding(0);
             this.cbIsMulti.MouseLocation = new System.Drawing.Point(-1, -1);
             this.cbIsMulti.MouseState = MaterialSkin.MouseState.HOVER;
@@ -162,11 +164,32 @@
             this.cblVariants.TabIndex = 9;
             this.cblVariants.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cblVariants_ItemCheck);
             // 
+            // btDelete
+            // 
+            this.btDelete.AutoSize = false;
+            this.btDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btDelete.Depth = 0;
+            this.btDelete.DrawShadows = true;
+            this.btDelete.HighEmphasis = true;
+            this.btDelete.Icon = null;
+            this.btDelete.Location = new System.Drawing.Point(632, 503);
+            this.btDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btDelete.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(109, 36);
+            this.btDelete.TabIndex = 10;
+            this.btDelete.Text = "Удалить";
+            this.btDelete.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.btDelete.UseAccentColor = true;
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
             // QuestionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 554);
+            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.cblVariants);
             this.Controls.Add(this.cbIsMulti);
             this.Controls.Add(this.btSaveQuestion);
@@ -194,5 +217,6 @@
         private MaterialSkin.Controls.MaterialButton btSaveQuestion;
         private MaterialSkin.Controls.MaterialCheckbox cbIsMulti;
         private System.Windows.Forms.CheckedListBox cblVariants;
+        private MaterialSkin.Controls.MaterialButton btDelete;
     }
 }

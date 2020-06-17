@@ -1,6 +1,7 @@
 ﻿using diploma.Models;
 using diploma.Views;
 using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,9 @@ namespace diploma.Presenters
         public void LoadQuestion()
         {
             using var context = new Context();
-            var q = context.Questions.FirstOrDefault(q => q.Id == View.QuestionId);
+            var q = context.Questions
+                .Include(q => q.Variants)
+                .FirstOrDefault(q => q.Id == View.QuestionId);
             View.IsMulti = q.IsMultiVariants;
             View.QuestionName = q.Name;
             View.Variants = q.Variants?.ToList() ?? new List<Variant>();
@@ -64,33 +67,37 @@ namespace diploma.Presenters
             }
         }
 
+        public void DeleteVariant()
+        {
+            var values = View.VariantList.SelectedItems.Cast<string>();
+            View.Variants = View.Variants.Where(v => values.Any(dv => dv != v.Title)).ToList();
+            UpdateVariantList();
+        }
+
         public void SaveQuestion()
         {
             if (string.IsNullOrEmpty(View.QuestionName))
             {
                 MaterialMessageBox.Show("Ошибка", "Введите заголовок вопроса!", 
                     System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
-            }
-            if (string.IsNullOrEmpty(View.Description))
-            {
-                MaterialMessageBox.Show("Ошибка", "Введите описание вопроса!",
-                    System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                return;
             }
             if (View.Variants.Count < 1)
             {
                 MaterialMessageBox.Show("Ошибка", "Вариантов ответа должно быть не меньше 2-х!",
                     System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                return;
             }
             using var context = new Context();
-            var question = new Question
-            {
-                Id = View.QuestionId,
-                Name = View.QuestionName,
-                Description = View.Description,
-                IsMultiVariants = View.IsMulti,
-                Variants = View.Variants
-            };
-            context.Entry<Question>(question).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var question = context.Questions.FirstOrDefault(q => q.Id == View.QuestionId);
+            question.Id = View.QuestionId;
+            question.Name = View.QuestionName;
+            question.Description = View.Description;
+            question.IsMultiVariants = View.IsMulti;
+            var variants = View.Variants
+                .Select(v => new Variant { Title = v.Title, IsTrue = v.IsTrue, QuestionId = View.QuestionId });
+            context.Variants.RemoveRange(context.Variants.Where(v => v.QuestionId == View.QuestionId));
+            context.Variants.AddRange(variants);
             context.SaveChanges();
         }
 

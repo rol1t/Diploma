@@ -29,16 +29,14 @@ namespace diploma.Presenters
 
         public void ConfigureGrid()
         {
-            var hiddenColumn = new[] { "Id", "Content" };
-            foreach (var item in hiddenColumn)
+            var c = View.Grid.Columns;
+            foreach (var item in c.Cast<DataGridViewColumn>())
             {
-                if (HasColumn(item))
-                {
-                    View.Grid.Columns[item].Visible = false;
-                }
+                item.Visible = false;
             }
             if (HasColumn("Name"))
             {
+                View.Grid.Columns["Name"].Visible = true;
                 View.Grid.Columns["Name"].HeaderText = "Название темы";
             }
             View.Grid.ReadOnly = true;

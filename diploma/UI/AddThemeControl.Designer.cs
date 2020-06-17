@@ -117,9 +117,9 @@
             this.txtContent1.FilePath = "";
             this.txtContent1.Location = new System.Drawing.Point(5, 70);
             this.txtContent1.Name = "txtContent1";
-            this.txtContent1.Rtf = "{\\rtf1\\ansi\\ansicpg1251\\deff0\\nouicompat{\\fonttbl{\\f0\\fnil\\fcharset204 Arial;}}\r\n" +
-    "{\\*\\generator Riched20 10.0.18362}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs20\\lang1049\\\'d2\\\'e" +
-    "5\\\'ea\\\'f1\\\'f2\\par\r\n}\r\n";
+            this.txtContent1.Rtf = "{\\rtf1\\ansi\\ansicpg1251\\deff0\\nouicompat\\deflang1049{\\fonttbl{\\f0\\fnil\\fcharset20" +
+    "4 Arial;}}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs20\\par" +
+    "\r\n}\r\n";
             this.txtContent1.SetColorWithFont = true;
             this.txtContent1.ShowToolStrip = true;
             this.txtContent1.Size = new System.Drawing.Size(950, 474);
