@@ -33,10 +33,10 @@ namespace diploma
         public string VariantName { get => txtVariant.Text; set => txtVariant.Text = value; }
         public List<Variant> Variants { get; set; }
         public CheckedListBox VariantList { get => cblVariants; }
+        public string Points { get => txtPoints.Text; set => txtPoints.Text = value; }
 
         private void cblVariants_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            var item = e;
             _presenter.ChangeVariant(cblVariants.Items[e.Index].ToString(), e.NewValue == CheckState.Checked);
         }
 

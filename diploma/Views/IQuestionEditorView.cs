@@ -16,6 +16,7 @@ namespace diploma.Views
         public string Description { get; set; }
         public bool IsMulti { get; set; }
         public string VariantName { get; set; }
+        public string Points { get; set; }
         public List<Variant> Variants { get; set; }
         public CheckedListBox VariantList { get; }
     }

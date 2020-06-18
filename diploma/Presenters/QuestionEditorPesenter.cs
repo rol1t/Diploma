@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace diploma.Presenters
 {
@@ -26,6 +27,7 @@ namespace diploma.Presenters
             View.QuestionName = q.Name;
             View.Variants = q.Variants?.ToList() ?? new List<Variant>();
             View.Description = q.Description;
+            View.Points = q.Points.ToString();
             UpdateVariantList();
         }
 
@@ -88,12 +90,19 @@ namespace diploma.Presenters
                     System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
                 return;
             }
+            if (!int.TryParse(View.Points, out var points))
+            {
+                MessageBox.Show("Ошибка", "Не верный формат баллов! (пример 1, 20, 40...)",
+                    System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+                return;
+            }
             using var context = new Context();
             var question = context.Questions.FirstOrDefault(q => q.Id == View.QuestionId);
             question.Id = View.QuestionId;
             question.Name = View.QuestionName;
             question.Description = View.Description;
             question.IsMultiVariants = View.IsMulti;
+            question.Points = points;
             var variants = View.Variants
                 .Select(v => new Variant { Title = v.Title, IsTrue = v.IsTrue, QuestionId = View.QuestionId });
             context.Variants.RemoveRange(context.Variants.Where(v => v.QuestionId == View.QuestionId));

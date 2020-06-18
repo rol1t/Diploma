@@ -34,6 +34,7 @@
             this.btEndTest = new MaterialSkin.Controls.MaterialButton();
             this.btNext = new MaterialSkin.Controls.MaterialButton();
             this.btPrevious = new MaterialSkin.Controls.MaterialButton();
+            this.txtTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listVariants
@@ -44,16 +45,18 @@
             this.listVariants.Name = "listVariants";
             this.listVariants.Size = new System.Drawing.Size(622, 229);
             this.listVariants.TabIndex = 2;
+            this.listVariants.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listVariants_ItemCheck);
             // 
             // txtQuestionNumber
             // 
             this.txtQuestionNumber.AutoSize = true;
             this.txtQuestionNumber.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtQuestionNumber.Location = new System.Drawing.Point(7, 68);
+            this.txtQuestionNumber.Location = new System.Drawing.Point(329, 71);
             this.txtQuestionNumber.Name = "txtQuestionNumber";
             this.txtQuestionNumber.Size = new System.Drawing.Size(149, 33);
             this.txtQuestionNumber.TabIndex = 4;
             this.txtQuestionNumber.Text = "Вопрос № ";
+            this.txtQuestionNumber.Visible = false;
             // 
             // txtQuestion
             // 
@@ -63,10 +66,10 @@
             this.txtQuestion.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtQuestion.Hint = "";
-            this.txtQuestion.Location = new System.Drawing.Point(13, 113);
+            this.txtQuestion.Location = new System.Drawing.Point(13, 116);
             this.txtQuestion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(621, 185);
+            this.txtQuestion.Size = new System.Drawing.Size(621, 182);
             this.txtQuestion.TabIndex = 5;
             this.txtQuestion.Text = "";
             // 
@@ -87,7 +90,7 @@
             this.btEndTest.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btEndTest.UseAccentColor = true;
             this.btEndTest.UseVisualStyleBackColor = true;
-            this.btEndTest.Visible = false;
+            this.btEndTest.Click += new System.EventHandler(this.btEndTest_Click);
             // 
             // btNext
             // 
@@ -127,11 +130,22 @@
             this.btPrevious.UseVisualStyleBackColor = true;
             this.btPrevious.Click += new System.EventHandler(this.btPrevious_Click);
             // 
+            // txtTime
+            // 
+            this.txtTime.AutoSize = true;
+            this.txtTime.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtTime.Location = new System.Drawing.Point(7, 68);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(82, 33);
+            this.txtTime.TabIndex = 7;
+            this.txtTime.Text = "00:00";
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 602);
+            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.btEndTest);
             this.Controls.Add(this.txtQuestion);
             this.Controls.Add(this.txtQuestionNumber);
@@ -153,5 +167,6 @@
         private System.Windows.Forms.Label txtQuestionNumber;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtQuestion;
         private MaterialSkin.Controls.MaterialButton btEndTest;
+        private System.Windows.Forms.Label txtTime;
     }
 }

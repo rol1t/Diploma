@@ -33,5 +33,10 @@ namespace diploma
         {
             _presenter.LoadTheme();
         }
+
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            _presenter.Print();
+        }
     }
 }

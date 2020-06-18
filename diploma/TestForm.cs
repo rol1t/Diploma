@@ -17,18 +17,29 @@ namespace diploma
     public partial class TestForm : MaterialForm, ITestView
     {
         private readonly TestPresenter _presenter;
+        private TimeSpan _currentTime;
         public int questionNumber { get; set; }
         public TestForm(int testId)
         {
             InitializeComponent();
             _presenter = new TestPresenter(this);
             _presenter.LoadTest(testId);
+            EndTest = new Action(() => this.Close());
         }
 
         public string TestName { get => this.Text; set => this.Text = value; }
         public List<Question> Questions { get; set; }
         public TimeSpan Time { get; set; }
-        public TimeSpan CurrentTime { get; set; }
+        public TimeSpan CurrentTime 
+        {
+            get => _currentTime;
+            set 
+            {
+                _currentTime = value;
+                var time = Time - _currentTime;
+                txtTime.Text = $"Осталось времени: {Math.Floor(time.TotalMinutes)}:{time.Seconds}";
+            }
+        }
         public Result Result { get; set; }
         public bool EndButtonVisible { get => btEndTest.Visible; set => btEndTest.Visible = value; }
         public bool PreviousQuestionButtonEnable { get => btPrevious.Enabled; set => btPrevious.Enabled = value; }
@@ -69,6 +80,8 @@ namespace diploma
 
         public CheckedListBox VariantListView { get => listVariants; }
         public bool IsMultiVariant { get; set; }
+        public Action EndTest { get; set; }
+        public int TestId { get; set; }
 
         private void btPrevious_Click(object sender, EventArgs e)
         {
@@ -78,6 +91,17 @@ namespace diploma
         private void btNext_Click(object sender, EventArgs e)
         {
             _presenter.NextQuestion();
+        }
+
+        private void listVariants_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            _presenter.ChangeVariant(listVariants.Items[e.Index].ToString(), e.NewValue == CheckState.Checked);
+        }
+
+        private void btEndTest_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _presenter.EndTest();
         }
     }
 }

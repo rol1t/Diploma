@@ -38,6 +38,7 @@
             this.cbIsMulti = new MaterialSkin.Controls.MaterialCheckbox();
             this.cblVariants = new System.Windows.Forms.CheckedListBox();
             this.btDelete = new MaterialSkin.Controls.MaterialButton();
+            this.txtPoints = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // txtDescription
@@ -60,7 +61,7 @@
             this.txtQuestionName.MouseState = MaterialSkin.MouseState.OUT;
             this.txtQuestionName.Multiline = false;
             this.txtQuestionName.Name = "txtQuestionName";
-            this.txtQuestionName.Size = new System.Drawing.Size(855, 50);
+            this.txtQuestionName.Size = new System.Drawing.Size(547, 50);
             this.txtQuestionName.TabIndex = 1;
             this.txtQuestionName.Text = "";
             // 
@@ -184,11 +185,27 @@
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
+            // txtPoints
+            // 
+            this.txtPoints.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPoints.Depth = 0;
+            this.txtPoints.Font = new System.Drawing.Font("Roboto", 12F);
+            this.txtPoints.Hint = "Количество баллов";
+            this.txtPoints.Location = new System.Drawing.Point(565, 72);
+            this.txtPoints.MaxLength = 50;
+            this.txtPoints.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPoints.Multiline = false;
+            this.txtPoints.Name = "txtPoints";
+            this.txtPoints.Size = new System.Drawing.Size(306, 50);
+            this.txtPoints.TabIndex = 11;
+            this.txtPoints.Text = "";
+            // 
             // QuestionEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 554);
+            this.Controls.Add(this.txtPoints);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.cblVariants);
             this.Controls.Add(this.cbIsMulti);
@@ -218,5 +235,6 @@
         private MaterialSkin.Controls.MaterialCheckbox cbIsMulti;
         private System.Windows.Forms.CheckedListBox cblVariants;
         private MaterialSkin.Controls.MaterialButton btDelete;
+        private MaterialSkin.Controls.MaterialTextBox txtPoints;
     }
 }

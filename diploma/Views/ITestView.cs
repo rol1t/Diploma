@@ -10,6 +10,7 @@ namespace diploma.Views
 {
     public interface ITestView
     {
+        public int TestId { get; set; }
         public string TestName { get; set; }
         public List<Question> Questions { get; set; }
         public TimeSpan Time { get; set; }
@@ -24,6 +25,7 @@ namespace diploma.Views
         public int QuestionId { get; set; }
         public string QuestionTitle { get; set; }
         public string QuestionDescription { get; set; }
+        public Action EndTest { get; set; }
         public List<Variant> Variants { get; set; }
         public CheckedListBox VariantListView { get; }
     }
