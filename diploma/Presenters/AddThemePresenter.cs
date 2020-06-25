@@ -22,12 +22,17 @@ namespace diploma.Presenters
             #region validation
             if (string.IsNullOrEmpty(View.ThemeName))
             {
-                View.Message = "Введите название темы!";
+                MaterialMessageBox.Show("Введите название темы!");
                 return;
             }
             if (View.Content.Text.Length < 5)
             {
-                View.Message = "Содержание темы должно быть не меньше 5 символов!";
+                MaterialMessageBox.Show("Содержание темы должно быть не меньше 5 символов!");
+                return;
+            }
+            if (View.SelectedSubject == null)
+            {
+                MaterialMessageBox.Show("Необходимо выбрать предмет!");
                 return;
             }
             #endregion
@@ -36,6 +41,7 @@ namespace diploma.Presenters
             {
                 Content = View.Content.Rtf,
                 Name = View.ThemeName,
+                SubjectId = View.SelectedSubject.Id
             };
 
             using (var context = new Context())
@@ -46,6 +52,12 @@ namespace diploma.Presenters
                 View.ThemeName = string.Empty;
                 View.Content.Text = string.Empty;
             }
+        }
+
+        internal void Load()
+        {
+            using var context = new Context();
+            View.Subjects = context.Subjects.ToList();
         }
     }
 }

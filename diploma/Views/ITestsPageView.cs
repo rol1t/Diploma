@@ -11,6 +11,8 @@ namespace diploma.Views
     {
         public List<Test> Tests { get; set; }
         public bool EditButtonVisible { get; set; }
+        public List<Subject> Subjects { get; set; }
+        public Subject SelectedSubject { get; }
         public Test SelectedTest { get; }
     }
 }

@@ -55,7 +55,9 @@ namespace diploma
         private void btStartTest_Click(object sender, EventArgs e)
         {
             var form = new TestForm(TestId);
+            this.Hide();
             form.ShowDialog();
+            this.Close();
         }
     }
 }

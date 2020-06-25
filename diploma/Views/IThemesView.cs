@@ -13,5 +13,9 @@ namespace diploma.Views
         List<Theme> Themes { get; set; }
 
         DataGridView Grid { get; }
+
+        List<Subject> Subjects { get; set; }
+
+        Subject SelectedSubject { get; }
     }
 }

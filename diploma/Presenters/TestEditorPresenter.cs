@@ -18,8 +18,13 @@ namespace diploma.Presenters
 
         public void InitForm(Test test)
         {
-            using var context = new Context();
             View.TestId = test.Id;
+            using var context = new Context();
+            var subjects = context.Subjects.ToList();
+            var nullSubject = new Subject { Id = -1, Alias = "-" };
+            subjects.Add(nullSubject);
+            View.Subjects = context.Subjects.ToList();
+            View.SelectedSubject = View.Subjects.FirstOrDefault(s => s.Id == test.SubjectId) ?? nullSubject;
             View.FormTitle = test.Name;
             View.ThemeGr.DataSource = new List<Theme>();
             HideAllColumns(View.ThemeGr);
@@ -83,6 +88,17 @@ namespace diploma.Presenters
             test.Questions.Remove(question);
             context.SaveChanges();
             View.Questions = test.Questions;
+        }
+
+        internal void ChangeSubject()
+        {
+            using var context = new Context();
+            var test = context.Tests.FirstOrDefault(s => View.TestId == s.Id);
+            if (View.SelectedSubject != null)
+            {
+                test.Subject = View.SelectedSubject;
+                context.SaveChanges();
+            }
         }
 
         public void EditQuestion()

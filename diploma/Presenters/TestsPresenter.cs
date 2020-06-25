@@ -39,8 +39,10 @@ namespace diploma.Presenters
             using (var context = new Context())
             {
                 View.Tests = await context.Tests.ToListAsync();
+                var subjects = context.Subjects.ToList();
+                subjects.Add(new Subject { Id = -1, Alias = "Все" });
+                View.Subjects = subjects;
             }
-            
         }
 
         public void OpenTest()
@@ -82,6 +84,33 @@ namespace diploma.Presenters
                 document.InsertList(bulletedList, new Font("Times New Roman") ,14);
             }
             document.Save();
+        }
+
+        internal void OpenTestStat()
+        {
+            if (View.SelectedTest == null)
+            {
+                return;
+            }
+            var form = new TestStatForm(View.SelectedTest.Id);
+            form.ShowDialog();
+        }
+
+        internal void Filter()
+        {
+            using var context = new Context();
+            if (View.SelectedSubject == null)
+            {
+                return;
+            }
+            if (View.SelectedSubject.Id == -1)
+            {
+                View.Tests = context.Tests.ToList();
+                return;
+            }
+            View.Tests = context.Tests
+                .Where(t => t.SubjectId == View.SelectedSubject.Id)
+                .ToList();
         }
     }
 }

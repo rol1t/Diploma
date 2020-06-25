@@ -19,7 +19,7 @@ namespace diploma.Presenters
         public void Load()
         {
             using var context = new Context();
-            var u = GetUserDataService.CurrentUser;
+            var u = context.Users.FirstOrDefault(u => u.Id == View.UserId);
             View.Login = u.Login;
             View.UserName = u.UserName;
             var role = context.Users
@@ -32,6 +32,10 @@ namespace diploma.Presenters
                 .Distinct()
                 .Count();
             View.ComplTest = $"{complTest}";
+            View.Results = context.Results
+                .Include(r => r.Test)
+                .Where(r => r.UserId == View.UserId)
+                .ToList();
         }
 
         public void Logout()

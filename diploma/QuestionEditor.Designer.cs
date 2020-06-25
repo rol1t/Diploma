@@ -217,6 +217,7 @@
             this.Controls.Add(this.txtQuestionName);
             this.Controls.Add(this.txtDescription);
             this.Name = "QuestionEditor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuestionEditor";
             this.ResumeLayout(false);
             this.PerformLayout();

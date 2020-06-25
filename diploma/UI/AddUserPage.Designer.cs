@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new MaterialSkin.Controls.MaterialTextBox();
             this.txtLogin = new MaterialSkin.Controls.MaterialTextBox();
@@ -37,6 +41,9 @@
             this.btAddUser = new MaterialSkin.Controls.MaterialButton();
             this.txtError = new System.Windows.Forms.Label();
             this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
+            this.grUsers = new MetroFramework.Controls.MetroGrid();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.grUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -183,10 +190,73 @@
             this.materialButton10.UseVisualStyleBackColor = true;
             this.materialButton10.Click += new System.EventHandler(this.materialButton10_Click);
             // 
+            // grUsers
+            // 
+            this.grUsers.AllowUserToResizeRows = false;
+            this.grUsers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grUsers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.grUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grUsers.DefaultCellStyle = dataGridViewCellStyle6;
+            this.grUsers.EnableHeadersVisualStyles = false;
+            this.grUsers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.grUsers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grUsers.Location = new System.Drawing.Point(457, 55);
+            this.grUsers.Name = "grUsers";
+            this.grUsers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.grUsers.RowHeadersVisible = false;
+            this.grUsers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
+            this.grUsers.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.grUsers.RowTemplate.Height = 50;
+            this.grUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grUsers.Size = new System.Drawing.Size(478, 303);
+            this.grUsers.TabIndex = 12;
+            this.grUsers.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.grUsers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grUsers_CellDoubleClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(451, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 33);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Пользователи";
+            // 
             // AddUserPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.grUsers);
             this.Controls.Add(this.materialButton10);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.btAddUser);
@@ -197,7 +267,9 @@
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
             this.Name = "AddUserPage";
-            this.Size = new System.Drawing.Size(798, 531);
+            this.Size = new System.Drawing.Size(962, 530);
+            this.Enter += new System.EventHandler(this.AddUserPage_Enter);
+            ((System.ComponentModel.ISupportInitialize)(this.grUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +286,7 @@
         private MaterialSkin.Controls.MaterialButton btAddUser;
         private System.Windows.Forms.Label txtError;
         private MaterialSkin.Controls.MaterialButton materialButton10;
+        private MetroFramework.Controls.MetroGrid grUsers;
+        private System.Windows.Forms.Label label2;
     }
 }

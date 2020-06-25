@@ -1,6 +1,6 @@
 ﻿namespace diploma
 {
-    partial class AddQuestionForm
+    partial class UserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // AddQuestionForm
+            // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "AddQuestionForm";
+            this.Name = "UserForm";
+            this.Padding = new System.Windows.Forms.Padding(1, 20, 1, 1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddQuestionForm";
+            this.Text = "UserForm";
             this.ResumeLayout(false);
 
         }

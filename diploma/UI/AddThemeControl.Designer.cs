@@ -34,6 +34,7 @@
             this.textBoxContextMenuStrip1 = new MaterialSkin.Controls.TextBoxContextMenuStrip();
             this.txtMessage = new System.Windows.Forms.Label();
             this.txtContent1 = new RichTextBoxEx.RichTextBoxEx();
+            this.cbSubjects = new MaterialSkin.Controls.MaterialComboBox();
             this.SuspendLayout();
             // 
             // txtThemeName
@@ -98,10 +99,11 @@
             // 
             this.txtMessage.Font = new System.Drawing.Font("Roboto", 14.14F);
             this.txtMessage.ForeColor = System.Drawing.Color.Red;
-            this.txtMessage.Location = new System.Drawing.Point(440, 14);
+            this.txtMessage.Location = new System.Drawing.Point(696, 11);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(404, 53);
+            this.txtMessage.Size = new System.Drawing.Size(148, 53);
             this.txtMessage.TabIndex = 10;
+            this.txtMessage.Enter += new System.EventHandler(this.txtMessage_Enter);
             // 
             // txtContent1
             // 
@@ -125,10 +127,35 @@
             this.txtContent1.Size = new System.Drawing.Size(950, 474);
             this.txtContent1.TabIndex = 11;
             // 
+            // cbSubjects
+            // 
+            this.cbSubjects.AutoResize = false;
+            this.cbSubjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbSubjects.Depth = 0;
+            this.cbSubjects.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbSubjects.DropDownHeight = 118;
+            this.cbSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubjects.DropDownWidth = 121;
+            this.cbSubjects.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbSubjects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbSubjects.FormattingEnabled = true;
+            this.cbSubjects.Hint = "Предмет";
+            this.cbSubjects.IntegralHeight = false;
+            this.cbSubjects.ItemHeight = 29;
+            this.cbSubjects.Location = new System.Drawing.Point(440, 15);
+            this.cbSubjects.MaxDropDownItems = 4;
+            this.cbSubjects.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbSubjects.Name = "cbSubjects";
+            this.cbSubjects.Size = new System.Drawing.Size(250, 35);
+            this.cbSubjects.TabIndex = 12;
+            this.cbSubjects.UseTallSize = false;
+            this.cbSubjects.Enter += new System.EventHandler(this.cbSubjects_Enter);
+            // 
             // AddThemeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbSubjects);
             this.Controls.Add(this.txtContent1);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btAddTheme);
@@ -150,5 +177,6 @@
         private MaterialSkin.Controls.TextBoxContextMenuStrip textBoxContextMenuStrip1;
         private System.Windows.Forms.Label txtMessage;
         private RichTextBoxEx.RichTextBoxEx txtContent1;
+        private MaterialSkin.Controls.MaterialComboBox cbSubjects;
     }
 }

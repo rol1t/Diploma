@@ -60,7 +60,7 @@ namespace diploma
         }
         public string UserRank { get => txtResultText.Text; set => txtResultText.Text = value; }
 
-        internal class ResultView
+        public class ResultView
         {
             public int Place { get; set; }
             public string Name { get; set; }

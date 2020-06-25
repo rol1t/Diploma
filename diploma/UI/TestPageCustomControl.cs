@@ -49,6 +49,20 @@ namespace diploma.UI
             .FirstOrDefault()
             .DataBoundItem as Test;
 
+        public List<Subject> Subjects 
+        { 
+            get => cbSubjects.DataSource as List<Subject>;
+            set 
+            {
+                cbSubjects.DataSource = value;
+                cbSubjects.ValueMember = "Id";
+                cbSubjects.DisplayMember = "Alias";
+                cbSubjects.SelectedValue = -1;
+            }
+        }
+
+        public Subject SelectedSubject => cbSubjects.SelectedItem as Subject;
+
         private void TestPageCustomControl_Load(object sender, EventArgs e)
         {
         }
@@ -56,6 +70,7 @@ namespace diploma.UI
         private void materialButton1_Click(object sender, EventArgs e)
         {
             _presenter.EditTest();
+            _presenter.UpdateTests();
         }
 
         private void metroGrid1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -71,6 +86,16 @@ namespace diploma.UI
         private void btPrint_Click(object sender, EventArgs e)
         {
             _presenter.Print();
+        }
+
+        private void btTestStat_Click(object sender, EventArgs e)
+        {
+            _presenter.OpenTestStat();
+        }
+
+        private void cbSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _presenter.Filter();
         }
     }
 }

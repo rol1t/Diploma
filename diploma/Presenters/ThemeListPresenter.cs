@@ -24,6 +24,9 @@ namespace diploma.Presenters
                     .Select(t => new { t.Id, t.Name })
                     .ToListAsync();
                 View.Themes = themes.Select(t => new Theme { Id = t.Id, Name = t.Name }).ToList();
+                var subjects = context.Subjects.ToList();
+                subjects.Add(new Subject { Id = -1, Alias = "Все" });
+                View.Subjects = subjects;
             }
         }
 
@@ -55,6 +58,19 @@ namespace diploma.Presenters
             return View.Grid.Columns
                 .Cast<DataGridViewColumn>()
                 .Any(c => c.Name == name);
+        }
+
+        internal void FilterTheme()
+        {
+            using var context = new Context();
+            if (View.SelectedSubject.Id == -1)
+            {
+                View.Themes = context.Themes.ToList();
+                return;
+            }
+            View.Themes = context.Themes
+                .Where(t => t.SubjectId == View.SelectedSubject.Id)
+                .ToList();
         }
     }
 }

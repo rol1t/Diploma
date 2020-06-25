@@ -49,11 +49,11 @@
             this.btPrint.DrawShadows = true;
             this.btPrint.HighEmphasis = true;
             this.btPrint.Icon = null;
-            this.btPrint.Location = new System.Drawing.Point(761, 25);
+            this.btPrint.Location = new System.Drawing.Point(452, 25);
             this.btPrint.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btPrint.MouseState = MaterialSkin.MouseState.HOVER;
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(100, 36);
+            this.btPrint.Size = new System.Drawing.Size(78, 36);
             this.btPrint.TabIndex = 5;
             this.btPrint.Text = "Печать";
             this.btPrint.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;

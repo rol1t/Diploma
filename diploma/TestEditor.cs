@@ -72,6 +72,19 @@ namespace diploma
 
         public MetroGrid ThemeGr => grThemes;
 
+        public List<Subject> Subjects 
+        { 
+            get => grSubject.DataSource as List<Subject>;
+            set 
+            {
+                grSubject.DataSource = value;
+                grSubject.ValueMember = "Id";
+                grSubject.DisplayMember = "Alias";
+            }
+        }
+
+        public Subject SelectedSubject { get => grSubject.SelectedItem as Subject; set => grSubject.SelectedItem = value; }
+        
         private void btLinkTheme_Click(object sender, EventArgs e)
         {
             if (cbAllThemes.SelectedItem == null)
@@ -99,6 +112,16 @@ namespace diploma
         private void materialButton3_Click(object sender, EventArgs e)
         {
             _presenter.EditQuestion();
+        }
+
+        private void grSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //_presenter.ChangeSubject();
+        }
+
+        private void btSaveSubject_Click(object sender, EventArgs e)
+        {
+            _presenter.ChangeSubject();
         }
     }
 }

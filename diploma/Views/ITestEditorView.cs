@@ -16,6 +16,8 @@ namespace diploma.Views
         public IEnumerable<Question> Questions { get; set; }
         public IEnumerable<Theme> Themes { get; set; }
         public IEnumerable<Theme> AllThemes { get; set; }
+        public List<Subject> Subjects { get; set; }
+        public Subject SelectedSubject { get; set; }
         public ComboBox AllThemesCb { get; }
         public MetroGrid QuestionGr { get; }
         public MetroGrid ThemeGr { get; }

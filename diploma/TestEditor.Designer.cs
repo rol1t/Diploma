@@ -46,6 +46,8 @@
             this.btLinkTheme = new MaterialSkin.Controls.MaterialButton();
             this.btDeleteLinkedTheme = new MaterialSkin.Controls.MaterialButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.grSubject = new MaterialSkin.Controls.MaterialComboBox();
+            this.btSaveSubject = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.grQuestions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grThemes)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +80,7 @@
             this.grQuestions.EnableHeadersVisualStyles = false;
             this.grQuestions.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grQuestions.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.grQuestions.Location = new System.Drawing.Point(13, 113);
+            this.grQuestions.Location = new System.Drawing.Point(13, 110);
             this.grQuestions.Name = "grQuestions";
             this.grQuestions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -96,7 +98,7 @@
             this.grQuestions.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.grQuestions.RowTemplate.Height = 50;
             this.grQuestions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grQuestions.Size = new System.Drawing.Size(476, 508);
+            this.grQuestions.Size = new System.Drawing.Size(476, 321);
             this.grQuestions.TabIndex = 1;
             this.grQuestions.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
@@ -107,7 +109,7 @@
             this.materialButton1.DrawShadows = true;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(13, 627);
+            this.materialButton1.Location = new System.Drawing.Point(13, 440);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -126,7 +128,7 @@
             this.btDelete.DrawShadows = true;
             this.btDelete.HighEmphasis = true;
             this.btDelete.Icon = null;
-            this.btDelete.Location = new System.Drawing.Point(398, 627);
+            this.btDelete.Location = new System.Drawing.Point(398, 440);
             this.btDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btDelete.Name = "btDelete";
@@ -145,7 +147,7 @@
             this.materialButton3.DrawShadows = true;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(121, 627);
+            this.materialButton3.Location = new System.Drawing.Point(121, 440);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -213,7 +215,7 @@
             this.grThemes.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.grThemes.RowTemplate.Height = 50;
             this.grThemes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grThemes.Size = new System.Drawing.Size(364, 450);
+            this.grThemes.Size = new System.Drawing.Size(364, 276);
             this.grThemes.TabIndex = 8;
             this.grThemes.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
@@ -223,7 +225,7 @@
             this.cbAllThemes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cbAllThemes.Depth = 0;
             this.cbAllThemes.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbAllThemes.DropDownHeight = 174;
+            this.cbAllThemes.DropDownHeight = 118;
             this.cbAllThemes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAllThemes.DropDownWidth = 121;
             this.cbAllThemes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
@@ -231,13 +233,14 @@
             this.cbAllThemes.FormattingEnabled = true;
             this.cbAllThemes.Hint = "Темы";
             this.cbAllThemes.IntegralHeight = false;
-            this.cbAllThemes.ItemHeight = 43;
-            this.cbAllThemes.Location = new System.Drawing.Point(519, 569);
+            this.cbAllThemes.ItemHeight = 29;
+            this.cbAllThemes.Location = new System.Drawing.Point(519, 396);
             this.cbAllThemes.MaxDropDownItems = 4;
             this.cbAllThemes.MouseState = MaterialSkin.MouseState.OUT;
             this.cbAllThemes.Name = "cbAllThemes";
-            this.cbAllThemes.Size = new System.Drawing.Size(364, 49);
+            this.cbAllThemes.Size = new System.Drawing.Size(364, 35);
             this.cbAllThemes.TabIndex = 9;
+            this.cbAllThemes.UseTallSize = false;
             // 
             // btLinkTheme
             // 
@@ -246,7 +249,7 @@
             this.btLinkTheme.DrawShadows = true;
             this.btLinkTheme.HighEmphasis = true;
             this.btLinkTheme.Icon = null;
-            this.btLinkTheme.Location = new System.Drawing.Point(519, 627);
+            this.btLinkTheme.Location = new System.Drawing.Point(519, 440);
             this.btLinkTheme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btLinkTheme.MouseState = MaterialSkin.MouseState.HOVER;
             this.btLinkTheme.Name = "btLinkTheme";
@@ -265,7 +268,7 @@
             this.btDeleteLinkedTheme.DrawShadows = true;
             this.btDeleteLinkedTheme.HighEmphasis = true;
             this.btDeleteLinkedTheme.Icon = null;
-            this.btDeleteLinkedTheme.Location = new System.Drawing.Point(792, 627);
+            this.btDeleteLinkedTheme.Location = new System.Drawing.Point(792, 440);
             this.btDeleteLinkedTheme.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btDeleteLinkedTheme.MouseState = MaterialSkin.MouseState.HOVER;
             this.btDeleteLinkedTheme.Name = "btDeleteLinkedTheme";
@@ -281,17 +284,62 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(7, 74);
+            this.label1.Location = new System.Drawing.Point(13, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "Вопросы";
             // 
+            // grSubject
+            // 
+            this.grSubject.AutoResize = false;
+            this.grSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grSubject.Depth = 0;
+            this.grSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.grSubject.DropDownHeight = 118;
+            this.grSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.grSubject.DropDownWidth = 121;
+            this.grSubject.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.grSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.grSubject.FormattingEnabled = true;
+            this.grSubject.Hint = "Предмет";
+            this.grSubject.IntegralHeight = false;
+            this.grSubject.ItemHeight = 29;
+            this.grSubject.Location = new System.Drawing.Point(233, 27);
+            this.grSubject.MaxDropDownItems = 4;
+            this.grSubject.MouseState = MaterialSkin.MouseState.OUT;
+            this.grSubject.Name = "grSubject";
+            this.grSubject.Size = new System.Drawing.Size(295, 35);
+            this.grSubject.TabIndex = 12;
+            this.grSubject.UseTallSize = false;
+            this.grSubject.SelectedIndexChanged += new System.EventHandler(this.grSubject_SelectedIndexChanged);
+            // 
+            // btSaveSubject
+            // 
+            this.btSaveSubject.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btSaveSubject.Depth = 0;
+            this.btSaveSubject.DrawShadows = true;
+            this.btSaveSubject.HighEmphasis = true;
+            this.btSaveSubject.Icon = null;
+            this.btSaveSubject.Location = new System.Drawing.Point(535, 26);
+            this.btSaveSubject.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btSaveSubject.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btSaveSubject.Name = "btSaveSubject";
+            this.btSaveSubject.Size = new System.Drawing.Size(182, 36);
+            this.btSaveSubject.TabIndex = 13;
+            this.btSaveSubject.Text = "Сохранить предмет";
+            this.btSaveSubject.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
+            this.btSaveSubject.UseAccentColor = false;
+            this.btSaveSubject.UseVisualStyleBackColor = true;
+            this.btSaveSubject.Click += new System.EventHandler(this.btSaveSubject_Click);
+            // 
             // TestEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 671);
+            this.ClientSize = new System.Drawing.Size(908, 487);
+            this.Controls.Add(this.btSaveSubject);
+            this.Controls.Add(this.grSubject);
             this.Controls.Add(this.btDeleteLinkedTheme);
             this.Controls.Add(this.btLinkTheme);
             this.Controls.Add(this.cbAllThemes);
@@ -304,6 +352,7 @@
             this.Controls.Add(this.grQuestions);
             this.Name = "TestEditor";
             this.Padding = new System.Windows.Forms.Padding(10, 110, 10, 50);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TestEditor";
             ((System.ComponentModel.ISupportInitialize)(this.grQuestions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grThemes)).EndInit();
@@ -324,5 +373,7 @@
         private MaterialSkin.Controls.MaterialButton btLinkTheme;
         private MaterialSkin.Controls.MaterialButton btDeleteLinkedTheme;
         private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialComboBox grSubject;
+        private MaterialSkin.Controls.MaterialButton btSaveSubject;
     }
 }

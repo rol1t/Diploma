@@ -88,6 +88,72 @@ namespace diploma.Models
                  .HasForeignKey(tt => tt.ThemeId);
             modelBuilder.Entity<TestTheme>()
                 .HasKey(tt => new { tt.TestId, tt.ThemeId });
+
+            //Subject
+            modelBuilder.Entity<Subject>()
+                .HasData(new Subject[]
+                {
+                    new Subject 
+                    { 
+                        Id = 1,
+                        Name = "Технологии разработки программного обеспечения",
+                        Alias = "ТРПО"
+                    },
+                    new Subject
+                    {
+                        Id = 2,
+                        Name = "Защита компьютерной информации",
+                        Alias = "ЗКИ"
+                    },
+                    new Subject
+                    {
+                        Id = 3,
+                        Name = "СПО",
+                        Alias = "Системное программное обеспечение"
+                    },
+                    new Subject
+                    {
+                        Id = 4,
+                        Name = "БДиСУБД",
+                        Alias = "Базы данных и систему управления базами данных"
+                    },
+                    new Subject
+                    {
+                        Id = 5,
+                        Name = "Основы алгоритмизации и программирования",
+                        Alias = "ОАИП"
+                    },
+                    new Subject
+                    {
+                        Id = 6,
+                        Name = "Компьютерные сети",
+                        Alias = "КС"
+                    },
+                    new Subject
+                    {
+                        Id = 7,
+                        Name = "Программные средства интренет приложений",
+                        Alias = "ПСИП"
+                    },
+                    new Subject
+                    {
+                        Id = 8,
+                        Name = "Автоматизация управленческой деятельности предприятия",
+                        Alias = "АУДП"
+                    },
+                    new Subject
+                    {
+                        Id = 9,
+                        Name = "Тестирование и отладка программного обеспечения",
+                        Alias = "ТиОПО"
+                    },
+                    new Subject
+                    {
+                        Id = 10,
+                        Name = "Конструирование программ и языки программирования",
+                        Alias = "КПиЯП"
+                    },
+                });
         }
     }
 }

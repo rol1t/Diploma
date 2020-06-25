@@ -36,6 +36,20 @@ namespace diploma.UI
 
         public DataGridView Grid => metroGrid1;
 
+        public List<Subject> Subjects 
+        { 
+            get => cbSubjects.DataSource as List<Subject>;
+            set 
+            { 
+                cbSubjects.DataSource = value;
+                cbSubjects.ValueMember = "Id";
+                cbSubjects.DisplayMember = "Alias";
+                cbSubjects.SelectedValue = -1;
+            } 
+        }
+
+        public Subject SelectedSubject => cbSubjects.SelectedItem as Subject;
+
         private void materialButton1_Click(object sender, EventArgs e)
         {
             _presenter.LoadThemes();
@@ -49,6 +63,11 @@ namespace diploma.UI
         private void ThemesControl_Enter(object sender, EventArgs e)
         {
             _presenter.LoadThemes();
+        }
+
+        private void cbSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _presenter.FilterTheme();
         }
     }
 }

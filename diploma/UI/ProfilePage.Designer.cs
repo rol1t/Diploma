@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btLogout = new MaterialSkin.Controls.MaterialButton();
             this.txtLogin = new System.Windows.Forms.Label();
@@ -36,14 +40,17 @@
             this.txtComplTest = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.Label();
+            this.grResults = new MetroFramework.Controls.MetroGrid();
+            this.label2 = new System.Windows.Forms.Label();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grResults)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 33);
             this.label1.TabIndex = 1;
@@ -57,7 +64,7 @@
             this.btLogout.DrawShadows = true;
             this.btLogout.HighEmphasis = true;
             this.btLogout.Icon = null;
-            this.btLogout.Location = new System.Drawing.Point(234, 213);
+            this.btLogout.Location = new System.Drawing.Point(141, 14);
             this.btLogout.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btLogout.MouseState = MaterialSkin.MouseState.HOVER;
             this.btLogout.Name = "btLogout";
@@ -90,7 +97,7 @@
             this.materialCard1.Controls.Add(this.txtLogin);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(9, 47);
+            this.materialCard1.Location = new System.Drawing.Point(9, 66);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -139,18 +146,81 @@
             this.txtName.TabIndex = 14;
             this.txtName.Text = "Имя: Гарицкий Алексей";
             // 
+            // grResults
+            // 
+            this.grResults.AllowUserToResizeRows = false;
+            this.grResults.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grResults.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grResults.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grResults.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grResults.DefaultCellStyle = dataGridViewCellStyle2;
+            this.grResults.EnableHeadersVisualStyles = false;
+            this.grResults.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.grResults.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grResults.Location = new System.Drawing.Point(9, 262);
+            this.grResults.Name = "grResults";
+            this.grResults.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grResults.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.grResults.RowHeadersVisible = false;
+            this.grResults.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            this.grResults.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.grResults.RowTemplate.Height = 50;
+            this.grResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grResults.Size = new System.Drawing.Size(629, 213);
+            this.grResults.TabIndex = 15;
+            this.grResults.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(3, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 33);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Результаты";
+            // 
             // ProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.grResults);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.btLogout);
             this.Controls.Add(this.label1);
             this.Name = "ProfilePage";
-            this.Size = new System.Drawing.Size(403, 282);
+            this.Size = new System.Drawing.Size(652, 491);
             this.Enter += new System.EventHandler(this.ProfilePage_Enter);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +236,7 @@
         private System.Windows.Forms.Label txtComplTest;
         private System.Windows.Forms.Label txtRole;
         private System.Windows.Forms.Label txtName;
+        private MetroFramework.Controls.MetroGrid grResults;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -10,6 +10,7 @@ namespace diploma.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Alias { get; set; }
         public IEnumerable<Test> Tests { get; set; }
         public IEnumerable<Theme> Themes { get; set; }
     }

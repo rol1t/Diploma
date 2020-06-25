@@ -64,5 +64,17 @@ namespace diploma.Presenters
             View.PasswordConfirmation = string.Empty;
             View.UserName = string.Empty;
         }
+
+        internal void LoadUsers()
+        {
+            using var context = new Context();
+            View.Users = context.Users.ToList();
+        }
+
+        internal void ShowUser()
+        {
+            var form = new UserForm(View.SelectedUser.Id);
+            form.ShowDialog();
+        }
     }
 }

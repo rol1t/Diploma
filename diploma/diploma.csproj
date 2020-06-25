@@ -246,6 +246,10 @@
     <Compile Include="Migrations\20200609164559_LinkQuestionWithVariant.designer.cs">
       <DependentUpon>20200609164559_LinkQuestionWithVariant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200624214706_Add_Subjects.cs" />
+    <Compile Include="Migrations\20200624214706_Add_Subjects.designer.cs">
+      <DependentUpon>20200624214706_Add_Subjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ContextModelSnapshot.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Question.cs" />
@@ -271,6 +275,7 @@
     <Compile Include="Presenters\TestInfoPresenter.cs" />
     <Compile Include="Presenters\TestPresenter.cs" />
     <Compile Include="Presenters\TestsPresenter.cs" />
+    <Compile Include="Presenters\TestStatPresenter.cs" />
     <Compile Include="Presenters\ThemeListPresenter.cs" />
     <Compile Include="Presenters\ThemeReaderPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -307,6 +312,12 @@
     </Compile>
     <Compile Include="TestInfoForm.Designer.cs">
       <DependentUpon>TestInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestStatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestStatForm.Designer.cs">
+      <DependentUpon>TestStatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemeReader.cs">
       <SubType>Form</SubType>
@@ -350,6 +361,12 @@
     <Compile Include="UI\ThemesControl.Designer.cs">
       <DependentUpon>ThemesControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\IAddQuestionView.cs" />
     <Compile Include="Views\IAddTestView.cs" />
     <Compile Include="Views\IAddThemeView.cs" />
@@ -362,10 +379,14 @@
     <Compile Include="Views\ITestConstructorView.cs" />
     <Compile Include="Views\ITestEditorView.cs" />
     <Compile Include="Views\ITestInfoView.cs" />
+    <Compile Include="Views\ITestStatView.cs" />
     <Compile Include="Views\ITestView.cs" />
     <Compile Include="Views\IThemeReaderView.cs" />
     <Compile Include="Views\IThemesView.cs" />
     <Compile Include="Views\ITestsPageView.cs" />
+    <EmbeddedResource Include="AddQuestionForm.resx">
+      <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +418,9 @@
     <EmbeddedResource Include="TestInfoForm.resx">
       <DependentUpon>TestInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestStatForm.resx">
+      <DependentUpon>TestStatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemeReader.resx">
       <DependentUpon>ThemeReader.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThemesControl.resx">
       <DependentUpon>ThemesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.msTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.addTestPage = new System.Windows.Forms.TabPage();
+            this.testConstructorPage1 = new diploma.UI.TestConstructorPage();
             this.addUserPage = new System.Windows.Forms.TabPage();
             this.addUserPage1 = new diploma.UI.AddUserPage();
             this.testsPage = new System.Windows.Forms.TabPage();
@@ -45,7 +46,6 @@
             this.themesControl1 = new diploma.UI.ThemesControl();
             this.themesControl2 = new diploma.UI.ThemesControl();
             this.themesControl3 = new diploma.UI.ThemesControl();
-            this.testConstructorPage1 = new diploma.UI.TestConstructorPage();
             this.msTabControl.SuspendLayout();
             this.addTestPage.SuspendLayout();
             this.addUserPage.SuspendLayout();
@@ -84,6 +84,20 @@
             this.addTestPage.TabIndex = 0;
             this.addTestPage.Text = "Добавить тест";
             this.addTestPage.UseVisualStyleBackColor = true;
+            // 
+            // testConstructorPage1
+            // 
+            this.testConstructorPage1.BackColor = System.Drawing.Color.White;
+            this.testConstructorPage1.Description = "";
+            this.testConstructorPage1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.testConstructorPage1.Location = new System.Drawing.Point(3, 3);
+            this.testConstructorPage1.Message = "";
+            this.testConstructorPage1.Name = "testConstructorPage1";
+            this.testConstructorPage1.Padding = new System.Windows.Forms.Padding(10, 90, 10, 50);
+            this.testConstructorPage1.Size = new System.Drawing.Size(1009, 514);
+            this.testConstructorPage1.TabIndex = 0;
+            this.testConstructorPage1.TestName = "";
+            this.testConstructorPage1.Time = "";
             // 
             // addUserPage
             // 
@@ -138,11 +152,13 @@
             // 
             // themesControl4
             // 
+            this.themesControl4.BackColor = System.Drawing.Color.White;
             this.themesControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.themesControl4.Location = new System.Drawing.Point(3, 3);
             this.themesControl4.Name = "themesControl4";
             this.themesControl4.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
             this.themesControl4.Size = new System.Drawing.Size(1009, 514);
+            this.themesControl4.Subjects = null;
             this.themesControl4.TabIndex = 0;
             this.themesControl4.Themes = null;
             // 
@@ -189,6 +205,7 @@
             this.addThemeControl1.Name = "addThemeControl1";
             this.addThemeControl1.Padding = new System.Windows.Forms.Padding(5, 70, 5, 5);
             this.addThemeControl1.Size = new System.Drawing.Size(1009, 514);
+            this.addThemeControl1.Subjects = null;
             this.addThemeControl1.TabIndex = 0;
             this.addThemeControl1.ThemeName = "";
             // 
@@ -210,6 +227,7 @@
             this.themesControl1.Name = "themesControl1";
             this.themesControl1.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
             this.themesControl1.Size = new System.Drawing.Size(710, 557);
+            this.themesControl1.Subjects = null;
             this.themesControl1.TabIndex = 0;
             this.themesControl1.Themes = null;
             // 
@@ -219,6 +237,7 @@
             this.themesControl2.Name = "themesControl2";
             this.themesControl2.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
             this.themesControl2.Size = new System.Drawing.Size(710, 557);
+            this.themesControl2.Subjects = null;
             this.themesControl2.TabIndex = 0;
             this.themesControl2.Themes = null;
             // 
@@ -228,22 +247,9 @@
             this.themesControl3.Name = "themesControl3";
             this.themesControl3.Padding = new System.Windows.Forms.Padding(5, 50, 5, 5);
             this.themesControl3.Size = new System.Drawing.Size(710, 557);
+            this.themesControl3.Subjects = null;
             this.themesControl3.TabIndex = 0;
             this.themesControl3.Themes = null;
-            // 
-            // testConstructorPage1
-            // 
-            this.testConstructorPage1.BackColor = System.Drawing.Color.White;
-            this.testConstructorPage1.Description = "";
-            this.testConstructorPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.testConstructorPage1.Location = new System.Drawing.Point(3, 3);
-            this.testConstructorPage1.Message = "";
-            this.testConstructorPage1.Name = "testConstructorPage1";
-            this.testConstructorPage1.Padding = new System.Windows.Forms.Padding(10, 90, 10, 50);
-            this.testConstructorPage1.Size = new System.Drawing.Size(1009, 514);
-            this.testConstructorPage1.TabIndex = 0;
-            this.testConstructorPage1.TestName = "";
-            this.testConstructorPage1.Time = "";
             // 
             // MainForm
             // 

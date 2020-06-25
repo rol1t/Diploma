@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using diploma.Views;
 using diploma.Presenters;
+using diploma.Models;
+using diploma.Services;
+using static diploma.TestStatForm;
 
 namespace diploma.UI
 {
@@ -19,6 +22,15 @@ namespace diploma.UI
         public ProfilePage()
         {
             InitializeComponent();
+            UserId = GetUserDataService.CurrentUser.Id;
+            _presenter = new ProfilePresenter(this);
+        }
+
+        public ProfilePage(int userId)
+        {
+            InitializeComponent();
+            UserId = userId;
+            btLogout.Visible = false;
             _presenter = new ProfilePresenter(this);
         }
 
@@ -27,9 +39,28 @@ namespace diploma.UI
         public string Role {  set => txtRole.Text = $"Роль: {value}"; }
         public string ComplTest { set => txtComplTest.Text = $"Пройдено тестов: {value}"; }
         public string AvgTest { set => txtAvgProcent.Text = $"Средний процент прохождения: {value}"; }
-
-        //public string Login { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        //public string UserName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int UserId { get; set; }
+        public List<Result> Results 
+        { 
+            get => grResults.DataSource as List<Result>;
+            set 
+            {
+                grResults.DataSource = value
+                    .Select(r => new { r.Test.Name, r.Score })
+                    .ToList();
+                var columns = grResults.Columns;
+                foreach (DataGridViewColumn item in columns)
+                {
+                    item.Visible = false;
+                }
+                columns["Name"].Visible = true;
+                columns["Score"].Visible = true; 
+                columns["Name"].HeaderText = "Название теста";
+                columns["Score"].HeaderText = "Балл";
+                grResults.ReadOnly = true;
+                grResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+        }
 
         private void btLogout_Click(object sender, EventArgs e)
         {
