@@ -13,6 +13,8 @@ namespace diploma.Views
         public bool EditButtonVisible { get; set; }
         public List<Subject> Subjects { get; set; }
         public Subject SelectedSubject { get; }
+        public List<Theme> Themes { get; set; }
+        public Theme SelectedTheme { get; }
         public Test SelectedTest { get; }
     }
 }

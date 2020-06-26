@@ -38,6 +38,7 @@
             this.btPrint = new MaterialSkin.Controls.MaterialButton();
             this.btTestStat = new MaterialSkin.Controls.MaterialButton();
             this.cbSubjects = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             this.metroGrid1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.metroGrid1.RowTemplate.Height = 50;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(838, 489);
+            this.metroGrid1.Size = new System.Drawing.Size(978, 489);
             this.metroGrid1.TabIndex = 3;
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroGrid1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.metroGrid1_CellMouseDoubleClick);
@@ -110,7 +111,7 @@
             this.materialButton1.DrawShadows = true;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(620, 10);
+            this.materialButton1.Location = new System.Drawing.Point(801, 10);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -148,7 +149,7 @@
             this.btTestStat.DrawShadows = true;
             this.btTestStat.HighEmphasis = true;
             this.btTestStat.Icon = null;
-            this.btTestStat.Location = new System.Drawing.Point(495, 10);
+            this.btTestStat.Location = new System.Drawing.Point(676, 10);
             this.btTestStat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btTestStat.MouseState = MaterialSkin.MouseState.HOVER;
             this.btTestStat.Name = "btTestStat";
@@ -179,15 +180,40 @@
             this.cbSubjects.MaxDropDownItems = 4;
             this.cbSubjects.MouseState = MaterialSkin.MouseState.OUT;
             this.cbSubjects.Name = "cbSubjects";
-            this.cbSubjects.Size = new System.Drawing.Size(250, 35);
+            this.cbSubjects.Size = new System.Drawing.Size(205, 35);
             this.cbSubjects.TabIndex = 13;
             this.cbSubjects.UseTallSize = false;
             this.cbSubjects.SelectedIndexChanged += new System.EventHandler(this.cbSubjects_SelectedIndexChanged);
+            // 
+            // materialComboBox1
+            // 
+            this.materialComboBox1.AutoResize = false;
+            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBox1.Depth = 0;
+            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBox1.DropDownHeight = 118;
+            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBox1.DropDownWidth = 121;
+            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBox1.FormattingEnabled = true;
+            this.materialComboBox1.Hint = "Темы";
+            this.materialComboBox1.IntegralHeight = false;
+            this.materialComboBox1.ItemHeight = 29;
+            this.materialComboBox1.Location = new System.Drawing.Point(449, 9);
+            this.materialComboBox1.MaxDropDownItems = 4;
+            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBox1.Name = "materialComboBox1";
+            this.materialComboBox1.Size = new System.Drawing.Size(220, 35);
+            this.materialComboBox1.TabIndex = 14;
+            this.materialComboBox1.UseTallSize = false;
+            this.materialComboBox1.SelectedIndexChanged += new System.EventHandler(this.materialComboBox1_SelectedIndexChanged);
             // 
             // TestPageCustomControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.materialComboBox1);
             this.Controls.Add(this.cbSubjects);
             this.Controls.Add(this.btTestStat);
             this.Controls.Add(this.btPrint);
@@ -196,7 +222,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TestPageCustomControl";
             this.Padding = new System.Windows.Forms.Padding(10, 60, 10, 10);
-            this.Size = new System.Drawing.Size(858, 559);
+            this.Size = new System.Drawing.Size(998, 559);
             this.Load += new System.EventHandler(this.TestPageCustomControl_Load);
             this.Enter += new System.EventHandler(this.TestPageCustomControl_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
@@ -213,5 +239,6 @@
         private MaterialSkin.Controls.MaterialButton btPrint;
         private MaterialSkin.Controls.MaterialButton btTestStat;
         private MaterialSkin.Controls.MaterialComboBox cbSubjects;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
     }
 }

@@ -63,6 +63,19 @@ namespace diploma.UI
 
         public Subject SelectedSubject => cbSubjects.SelectedItem as Subject;
 
+        public List<Theme> Themes
+        {
+            get => materialComboBox1.DataSource as List<Theme>;
+            set
+            {
+                materialComboBox1.DataSource = value;
+                materialComboBox1.ValueMember = "Id";
+                materialComboBox1.DisplayMember = "Name";
+                materialComboBox1.SelectedValue = -1;
+            }
+        }
+        public Theme SelectedTheme { get => materialComboBox1.SelectedItem as Theme; }
+
         private void TestPageCustomControl_Load(object sender, EventArgs e)
         {
         }
@@ -94,6 +107,11 @@ namespace diploma.UI
         }
 
         private void cbSubjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _presenter.Filter();
+        }
+
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             _presenter.Filter();
         }

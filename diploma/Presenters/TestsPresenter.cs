@@ -42,6 +42,9 @@ namespace diploma.Presenters
                 var subjects = context.Subjects.ToList();
                 subjects.Add(new Subject { Id = -1, Alias = "Все" });
                 View.Subjects = subjects;
+                var themes = context.Themes.ToList();
+                themes.Add(new Theme { Id = -1, Name = "Все" });
+                View.Themes = themes;
             }
         }
 
@@ -99,18 +102,21 @@ namespace diploma.Presenters
         internal void Filter()
         {
             using var context = new Context();
-            if (View.SelectedSubject == null)
+            var tests = context.Tests.ToList();
+            if (View.SelectedSubject == null || View.SelectedTheme == null)
             {
                 return;
             }
-            if (View.SelectedSubject.Id == -1)
+            if (View.SelectedSubject.Id != -1)
             {
-                View.Tests = context.Tests.ToList();
-                return;
+                tests = tests.Where(t => t.SubjectId == View.SelectedSubject.Id).ToList();
             }
-            View.Tests = context.Tests
-                .Where(t => t.SubjectId == View.SelectedSubject.Id)
-                .ToList();
+            if (View.SelectedTheme.Id != -1)
+            {
+                var themeTest = context.TestThemes.Where(t => t.ThemeId == View.SelectedTheme.Id);
+                tests = tests.Where(t => themeTest.Any(tt => tt.TestId == t.Id)).ToList();
+            }
+            View.Tests = tests.ToList();
         }
     }
 }
